@@ -1,4 +1,4 @@
-import { Position, CellValue, GridPosition } from '../types/game.js';
+import type { Position, CellValue, GridPosition } from '../types/game.js';
 
 export class GameBoard {
   private board: CellValue[][];

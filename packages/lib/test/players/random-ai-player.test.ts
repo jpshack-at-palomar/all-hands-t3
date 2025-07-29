@@ -177,7 +177,7 @@ describe('RandomAIPlayer', () => {
       const player = new RandomAIPlayer('O');
 
       // Test various board configurations
-      const boardStates = [
+      const boardStates: CellValue[][][] = [
         // Single move available
         [
           ['X', 'O', 'X'],

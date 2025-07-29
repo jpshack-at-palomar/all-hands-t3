@@ -1,4 +1,4 @@
-import {
+import type {
   Player,
   Position,
   GameState as GameStateType,

@@ -1,5 +1,5 @@
 import { Player } from './player.js';
-import {
+import type {
   Player as PlayerType,
   Position,
   GameState as GameStateType,
