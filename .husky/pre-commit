@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+echo "🔍 Running pre-commit checks..."
+
+# Run linting with auto-fix (matches npm test)
+echo "📝 Checking and fixing code style..."
+pnpm lint:fix || exit 1
+
+# Run formatting with auto-fix (matches npm test)
+echo "🎨 Checking and fixing code formatting..."
+pnpm format || exit 1
+
+# Run tests
+echo "🧪 Running tests..."
+pnpm -r test || exit 1
+
+echo "✅ All pre-commit checks passed!"

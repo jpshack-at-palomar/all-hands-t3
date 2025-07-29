@@ -1,0 +1,34 @@
+{
+  "name": "pnpm-template",
+  "version": "1.0.0",
+  "description": "A pnpm workspace template with TypeScript, Vitest, ESLint, and Prettier",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm build && pnpm typecheck && pnpm lint:fix && pnpm format && pnpm -r test",
+    "test:ci": "pnpm build && pnpm typecheck && pnpm lint:fix && pnpm format && pnpm -r test:ci",
+    "prelint": "prettier -l . || true",
+    "lint": "prettier --write . --log-level error && eslint . --fix",
+    "lint:fix": "prettier --write . --log-level error && eslint . --fix",
+    "format": "prettier --write . --log-level error",
+    "format:check": "prettier --check . --log-level error",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.2.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+# Simple commit message validation
+# You can replace this with @commitlint/cli if you want more comprehensive validation
+
+commit_msg=$(cat "$1")
+
+# Check if commit message follows conventional commits format
+if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+"; then
+  echo "❌ Invalid commit message format!"
+  echo "Please use conventional commit format: type(scope): description"
+  echo "Examples:"
+  echo "  feat: add new feature"
+  echo "  fix(auth): resolve login issue"
+  echo "  docs: update README"
+  echo "  style: format code"
+  echo "  refactor: improve code structure"
+  echo "  test: add unit tests"
+  echo "  chore: update dependencies"
+  exit 1
+fi
+
+echo "✅ Commit message format is valid!"

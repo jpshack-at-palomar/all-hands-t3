@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  checks: write
+  actions: read
+
+jobs:
+  test:
+    name: Test (Node.js ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linting
+        run: pnpm lint
+
+      - name: Check formatting
+        run: pnpm format:check
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run tests with CI reporting
+        id: test_run
+        run: pnpm test:ci
+        continue-on-error: true
+
+      - name: Debug - List coverage files
+        if: always()
+        run: |
+          echo "=== Coverage files ==="
+          find packages -name "*.xml" -o -name "coverage" -type d
+          echo "=== JUnit XML content ==="
+          find packages -name "vitest-junit.xml" -exec cat {} \;
+
+      - name: Upload coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        id: upload_coverage_artifact
+        with:
+          name: coverage-reports-node-${{ matrix.node-version }}
+          path: |
+            packages/*/coverage/**
+
+      - name: Publish Test Report
+        uses: phoenix-actions/test-reporting@v15
+        if: always()
+        with:
+          name: Test Results (Node.js ${{ matrix.node-version }})
+          path: packages/*/coverage/vitest-junit.xml
+          reporter: jest-junit
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on-error: false
+
+      - name: Final Check Run Update
+        uses: JediSchools/RichChecks@1.0
+        if: always()
+        with:
+          name: 'code-coverage-reports-node-${{ matrix.node-version }}'
+          status: 'completed'
+          conclusion: 'success'
+          title: 'Code Coverage Reports (Node.js ${{ matrix.node-version }})'
+          summary: 'Code Coverage (complete)'
+          details: 'Detailed [code coverage reports](${{ steps.upload_coverage_artifact.outputs.artifact-url }}) are available.'
+          fail-on-error: false
+          fail-on-neutral: false
+
+      - name: Fail if tests failed
+        if: steps.test_run.outcome == 'failure'
+        run: exit 1
