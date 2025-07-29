@@ -1,20 +1,25 @@
-import {
+import type {
   GameState as GameStateType,
   Position,
   GameMove,
   MoveAnalysis,
+  GridPosition,
 } from '../types/game.js';
 import { GameBoard } from './game-board.js';
 import { MoveAnalyzer } from './move-analyzer.js';
+import { ActionSpaceAnalyzer } from './action-space.js';
+import type { ActionSpace } from './action-space.js';
 
 export class GameState {
   private state: GameStateType;
   private board: GameBoard;
   private moveAnalyzer: MoveAnalyzer;
+  private actionSpaceAnalyzer: ActionSpaceAnalyzer;
 
   constructor() {
     this.board = new GameBoard();
     this.moveAnalyzer = new MoveAnalyzer();
+    this.actionSpaceAnalyzer = new ActionSpaceAnalyzer();
     this.state = {
       board: this.board.getBoard(),
       currentPlayer: 'X',
@@ -155,5 +160,44 @@ export class GameState {
           `${move.player}: ${move.gridPosition.letter}${move.gridPosition.number}`
       )
       .join(', ');
+  }
+
+  /**
+   * Get complete action space information
+   */
+  getActionSpace(): ActionSpace {
+    return this.actionSpaceAnalyzer.getActionSpace(this.state);
+  }
+
+  /**
+   * Get action space with grid coordinates
+   */
+  getActionSpaceWithGrid(): Array<Position & { gridPosition: GridPosition }> {
+    return this.actionSpaceAnalyzer.getActionSpaceWithGrid(this.state);
+  }
+
+  /**
+   * Get strategic action space
+   */
+  getStrategicActionSpace(
+    criteria: 'winning' | 'blocking' | 'forking' | 'all'
+  ): Position[] {
+    return this.actionSpaceAnalyzer.getStrategicActionSpace(
+      this.state,
+      criteria
+    );
+  }
+
+  /**
+   * Get action space statistics
+   */
+  getActionSpaceStats(): {
+    totalMoves: number;
+    winningMoves: number;
+    blockingMoves: number;
+    forkingMoves: number;
+    neutralMoves: number;
+  } {
+    return this.actionSpaceAnalyzer.getActionSpaceStats(this.state);
   }
 }

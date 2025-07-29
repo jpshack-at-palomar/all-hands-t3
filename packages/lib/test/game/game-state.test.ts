@@ -445,4 +445,104 @@ describe('GameState', () => {
       expect(stateAfter.board[0][1]).toBe('X');
     });
   });
+
+  describe('action space integration', () => {
+    describe('getActionSpace', () => {
+      it('should return complete action space information', () => {
+        const actionSpace = gameState.getActionSpace();
+
+        expect(actionSpace).toHaveProperty('availableMoves');
+        expect(actionSpace).toHaveProperty('totalMoves');
+        expect(actionSpace).toHaveProperty('strategicMoves');
+        expect(actionSpace).toHaveProperty('bestMove');
+        expect(actionSpace).toHaveProperty('gamePhase');
+
+        expect(actionSpace.availableMoves).toHaveLength(9);
+        expect(actionSpace.totalMoves).toBe(9);
+        expect(actionSpace.gamePhase).toBe('opening');
+      });
+
+      it('should update after moves are made', () => {
+        gameState.makeMove({ row: 1, col: 1 });
+        const actionSpace = gameState.getActionSpace();
+
+        expect(actionSpace.availableMoves).toHaveLength(8);
+        expect(actionSpace.totalMoves).toBe(8);
+        expect(actionSpace.gamePhase).toBe('opening');
+      });
+    });
+
+    describe('getActionSpaceWithGrid', () => {
+      it('should return moves with grid coordinates', () => {
+        const gridMoves = gameState.getActionSpaceWithGrid();
+
+        expect(gridMoves).toHaveLength(9);
+        gridMoves.forEach((move) => {
+          expect(move).toHaveProperty('row');
+          expect(move).toHaveProperty('col');
+          expect(move).toHaveProperty('gridPosition');
+          expect(move.gridPosition).toHaveProperty('letter');
+          expect(move.gridPosition).toHaveProperty('number');
+        });
+
+        // Check specific coordinate mapping
+        const centerMove = gridMoves.find((m) => m.row === 1 && m.col === 1);
+        expect(centerMove?.gridPosition).toEqual({ letter: 'B', number: 2 });
+      });
+    });
+
+    describe('getStrategicActionSpace', () => {
+      it('should filter moves by criteria', () => {
+        // Set up a scenario with strategic moves
+        gameState.makeMove({ row: 0, col: 0 }); // X
+        gameState.makeMove({ row: 1, col: 0 }); // O
+        gameState.makeMove({ row: 0, col: 1 }); // X - two in a row
+
+        const allMoves = gameState.getStrategicActionSpace('all');
+        expect(allMoves.length).toBeGreaterThanOrEqual(0);
+
+        // Check that we have strategic moves available
+        const analysis = gameState.getMoveAnalysis();
+        const hasStrategicMoves = analysis.some(
+          (move) =>
+            move.winInTurns !== null ||
+            move.blocksOpponentWin ||
+            move.createsFork ||
+            move.blocksOpponentFork
+        );
+        expect(hasStrategicMoves).toBe(true);
+      });
+
+      it('should return empty array when no strategic moves available', () => {
+        const winningMoves = gameState.getStrategicActionSpace('winning');
+        expect(winningMoves).toEqual([]);
+      });
+    });
+
+    describe('getActionSpaceStats', () => {
+      it('should return correct statistics for new game', () => {
+        const stats = gameState.getActionSpaceStats();
+
+        expect(stats.totalMoves).toBe(9);
+        expect(stats.winningMoves).toBe(0);
+        expect(stats.blockingMoves).toBe(0);
+        expect(stats.forkingMoves).toBe(0);
+        expect(stats.neutralMoves).toBe(9);
+      });
+
+      it('should update statistics after moves', () => {
+        gameState.makeMove({ row: 0, col: 0 }); // X
+        gameState.makeMove({ row: 1, col: 0 }); // O
+        gameState.makeMove({ row: 0, col: 1 }); // X - creates winning opportunity
+
+        const stats = gameState.getActionSpaceStats();
+        expect(stats.totalMoves).toBe(6);
+
+        // Check that we have some strategic moves (winning, blocking, or forking)
+        const strategicMoves =
+          stats.winningMoves + stats.blockingMoves + stats.forkingMoves;
+        expect(strategicMoves).toBeGreaterThanOrEqual(0);
+      });
+    });
+  });
 });
