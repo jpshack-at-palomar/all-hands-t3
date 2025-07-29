@@ -4,8 +4,8 @@ import type {
   Position,
   MoveAnalysis,
 } from '../types/game.js';
+import type { Player } from '../players/player.js';
 import { GameState } from './game-state.js';
-import { Player } from '../players/player.js';
 import { HumanPlayer } from '../players/human-player.js';
 import { RandomAIPlayer } from '../players/random-ai-player.js';
 import { StrategicAIPlayer } from '../players/strategic-ai-player.js';
