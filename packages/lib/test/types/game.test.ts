@@ -15,7 +15,7 @@ describe('Game Types', () => {
     it('should accept valid player values', () => {
       const playerX: Player = 'X';
       const playerO: Player = 'O';
-      
+
       expect(playerX).toBe('X');
       expect(playerO).toBe('O');
     });
@@ -26,7 +26,7 @@ describe('Game Types', () => {
       const cellX: CellValue = 'X';
       const cellO: CellValue = 'O';
       const cellEmpty: CellValue = null;
-      
+
       expect(cellX).toBe('X');
       expect(cellO).toBe('O');
       expect(cellEmpty).toBe(null);
@@ -38,7 +38,7 @@ describe('Game Types', () => {
       const playing: GameStatus = 'playing';
       const won: GameStatus = 'won';
       const draw: GameStatus = 'draw';
-      
+
       expect(playing).toBe('playing');
       expect(won).toBe('won');
       expect(draw).toBe('draw');
@@ -48,7 +48,7 @@ describe('Game Types', () => {
   describe('Position interface', () => {
     it('should create valid position objects', () => {
       const position: Position = { row: 1, col: 2 };
-      
+
       expect(position.row).toBe(1);
       expect(position.col).toBe(2);
     });
@@ -56,7 +56,7 @@ describe('Game Types', () => {
     it('should accept boundary values', () => {
       const topLeft: Position = { row: 0, col: 0 };
       const bottomRight: Position = { row: 2, col: 2 };
-      
+
       expect(topLeft).toEqual({ row: 0, col: 0 });
       expect(bottomRight).toEqual({ row: 2, col: 2 });
     });
@@ -65,7 +65,7 @@ describe('Game Types', () => {
   describe('GridPosition interface', () => {
     it('should create valid grid position objects', () => {
       const gridPos: GridPosition = { letter: 'A', number: 1 };
-      
+
       expect(gridPos.letter).toBe('A');
       expect(gridPos.number).toBe(1);
     });
@@ -74,7 +74,7 @@ describe('Game Types', () => {
       const a1: GridPosition = { letter: 'A', number: 1 };
       const b2: GridPosition = { letter: 'B', number: 2 };
       const c3: GridPosition = { letter: 'C', number: 3 };
-      
+
       expect(a1).toEqual({ letter: 'A', number: 1 });
       expect(b2).toEqual({ letter: 'B', number: 2 });
       expect(c3).toEqual({ letter: 'C', number: 3 });
@@ -89,7 +89,7 @@ describe('Game Types', () => {
         gridPosition: { letter: 'B', number: 2 },
         timestamp: Date.now(),
       };
-      
+
       expect(move.player).toBe('X');
       expect(move.position).toEqual({ row: 1, col: 1 });
       expect(move.gridPosition).toEqual({ letter: 'B', number: 2 });
@@ -111,7 +111,7 @@ describe('Game Types', () => {
         moves: [],
         turnNumber: 1,
       };
-      
+
       expect(gameState.board).toHaveLength(3);
       expect(gameState.board[0]).toHaveLength(3);
       expect(gameState.currentPlayer).toBe('O');
@@ -134,7 +134,7 @@ describe('Game Types', () => {
         moves: [],
         turnNumber: 5,
       };
-      
+
       expect(wonState.status).toBe('won');
       expect(wonState.winner).toBe('X');
     });
@@ -150,7 +150,7 @@ describe('Game Types', () => {
         createsFork: false,
         blocksOpponentFork: false,
       };
-      
+
       expect(analysis.position).toEqual({ row: 0, col: 0 });
       expect(analysis.gridPosition).toEqual({ letter: 'A', number: 1 });
       expect(analysis.winInTurns).toBe(1);
@@ -168,7 +168,7 @@ describe('Game Types', () => {
         createsFork: false,
         blocksOpponentFork: true,
       };
-      
+
       expect(analysis.winInTurns).toBe(null);
       expect(analysis.blocksOpponentWin).toBe(true);
       expect(analysis.blocksOpponentFork).toBe(true);

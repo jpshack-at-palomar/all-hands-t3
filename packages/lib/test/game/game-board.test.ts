@@ -16,7 +16,7 @@ describe('GameBoard', () => {
       expect(boardState[0]).toHaveLength(3);
       expect(boardState[1]).toHaveLength(3);
       expect(boardState[2]).toHaveLength(3);
-      
+
       // Check all cells are null
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
@@ -60,7 +60,7 @@ describe('GameBoard', () => {
       const position: Position = { row: 1, col: 2 };
       board.setCell(position, 'X');
       expect(board.getCell(position)).toBe('X');
-      
+
       board.setCell(position, 'O');
       expect(board.getCell(position)).toBe('O');
     });
@@ -97,7 +97,7 @@ describe('GameBoard', () => {
     it('should return all positions for empty board', () => {
       const emptyPositions = board.getEmptyPositions();
       expect(emptyPositions).toHaveLength(9);
-      
+
       // Check that all positions are included
       const expectedPositions = [];
       for (let row = 0; row < 3; row++) {
@@ -112,10 +112,10 @@ describe('GameBoard', () => {
       board.setCell({ row: 0, col: 0 }, 'X');
       board.setCell({ row: 1, col: 1 }, 'O');
       board.setCell({ row: 2, col: 2 }, 'X');
-      
+
       const emptyPositions = board.getEmptyPositions();
       expect(emptyPositions).toHaveLength(6);
-      
+
       // Check that occupied positions are not included
       expect(emptyPositions).not.toContainEqual({ row: 0, col: 0 });
       expect(emptyPositions).not.toContainEqual({ row: 1, col: 1 });
@@ -129,7 +129,7 @@ describe('GameBoard', () => {
           board.setCell({ row, col }, row % 2 === 0 ? 'X' : 'O');
         }
       }
-      
+
       const emptyPositions = board.getEmptyPositions();
       expect(emptyPositions).toHaveLength(0);
     });
@@ -160,10 +160,10 @@ describe('GameBoard', () => {
   describe('getBoard', () => {
     it('should return a copy of the board state', () => {
       const boardState = board.getBoard();
-      
+
       // Modify the returned array
       boardState[0][0] = 'X';
-      
+
       // Original board should not be affected
       expect(board.getCell({ row: 0, col: 0 })).toBe(null);
     });
@@ -171,7 +171,7 @@ describe('GameBoard', () => {
     it('should return current board state', () => {
       board.setCell({ row: 0, col: 0 }, 'X');
       board.setCell({ row: 1, col: 1 }, 'O');
-      
+
       const boardState = board.getBoard();
       expect(boardState[0][0]).toBe('X');
       expect(boardState[1][1]).toBe('O');
@@ -185,9 +185,9 @@ describe('GameBoard', () => {
       board.setCell({ row: 0, col: 0 }, 'X');
       board.setCell({ row: 1, col: 1 }, 'O');
       board.setCell({ row: 2, col: 2 }, 'X');
-      
+
       board.reset();
-      
+
       // Check all positions are empty
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
@@ -204,7 +204,7 @@ describe('GameBoard', () => {
         }
       }
       expect(board.isFull()).toBe(true);
-      
+
       board.reset();
       expect(board.isFull()).toBe(false);
       expect(board.getEmptyPositions()).toHaveLength(9);
@@ -290,7 +290,7 @@ describe('GameBoard', () => {
           const position: Position = { row, col };
           const grid = board.positionToGrid(position);
           const convertedBack = board.gridToPosition(grid);
-          
+
           expect(convertedBack).toEqual(position);
           expect(board.isValidGridPosition(grid)).toBe(true);
         }
