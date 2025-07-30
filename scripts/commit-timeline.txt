@@ -1,0 +1,322 @@
+time: 00:00
+commit: b8b8b12e6b76e10ea05de16a7be310fcf38a6fc8
+branch: jps/t3-lib-component-m1
+
+Initial commit
+
+  .github/workflows/ci.yml
+  .gitignore
+  .husky/commit-msg
+  .husky/pre-commit
+  .prettierignore
+  .prettierrc
+  README.md
+  eslint.config.js
+  package.json
+  packages/lib/package.json
+  packages/lib/src/index.ts
+  packages/lib/test/index.test.ts
+  packages/lib/tsconfig.json
+  packages/lib/tsconfig.test.json
+  packages/lib/vitest.config.ci.ts
+  pnpm-lock.yaml
+  pnpm-workspace.yaml
+  tsconfig.json
+  vitest.config.ts
+
+time: 00:09  (+9 mins)
+commit: 7168db6818b41174477847ace6fab6244dbff0af
+branch: jps/t3-lib-component-m1
+
+docs: updated the readme and doing the first build
+
+  README.md
+  doc/approach.md
+  doc/t3-lib-component.md
+
+time: 00:26  (+17 mins)
+commit: 962c9589bc0f41513e43ea2fca419c19d428e8a2
+branch: jps/t3-lib-component-m1
+
+docs: added design docs and cursor agent config
+
+  .cursor/environment.json
+  doc/oh-tech-assessment.md
+  doc/t3-contracts.md
+  doc/t3-lib-component.md
+
+time: 00:34  (+7 mins)
+commit: ef0a90d5479a609c99a28574874a2a291b323413
+branch: jps/t3-lib-component-m1
+
+feat: implement type definitions and game board
+
+  doc/t3-lib-component.md
+  packages/lib/src/game/game-board.ts
+  packages/lib/src/types/game.ts
+  packages/lib/test/game/game-board.test.ts
+  packages/lib/test/types/game.test.ts
+
+time: 00:40  (+6 mins)
+commit: 93b17298c4af416a7a5e8aa82e95b606bddd0003
+branch: jps/t3-lib-component-m1
+
+feat: implement game state management and move analysis
+
+  doc/t3-lib-component.md
+  packages/lib/src/game/game-board.ts
+  packages/lib/src/game/game-state.ts
+  packages/lib/src/game/move-analyzer.ts
+  packages/lib/src/types/game.ts
+  packages/lib/test/game/game-board.test.ts
+  packages/lib/test/game/game-state.test.ts
+  packages/lib/test/game/move-analyzer.test.ts
+  packages/lib/test/types/game.test.ts
+
+time: 00:48  (+7 mins)
+commit: 30fe1717b34f421f8d21b4ecce752f0516301000
+branch: jps/t3-lib-component-m1
+
+feat: implement player system with AI players
+
+  doc/t3-lib-component.md
+  packages/lib/src/players/human-player.ts
+  packages/lib/src/players/player.ts
+  packages/lib/src/players/random-ai-player.ts
+  packages/lib/src/players/strategic-ai-player.ts
+  packages/lib/test/players/human-player.test.ts
+  packages/lib/test/players/player.test.ts
+  packages/lib/test/players/random-ai-player.test.ts
+  packages/lib/test/players/strategic-ai-player.test.ts
+
+time: 00:52  (+3 mins)
+commit: 14b8b7e09f854e92ace2fca5e93cf9d983ebfa92
+branch: jps/t3-lib-component-m1
+
+feat: implement game engine with player coordination
+
+  doc/t3-lib-component.md
+  packages/lib/src/game/game-engine.ts
+  packages/lib/test/game/game-engine.test.ts
+
+time: 00:57  (+4 mins)
+commit: 98c59e4aa731e4eefaf79b3ef6a46b3ad637c0ed
+branch: jps/t3-lib-component-m1
+
+feat: implement action space analysis with strategic filtering
+
+  doc/t3-lib-component.md
+  packages/lib/src/game/action-space.ts
+  packages/lib/src/game/game-state.ts
+  packages/lib/test/game/action-space.test.ts
+  packages/lib/test/game/game-state.test.ts
+
+time: 00:59  (+2 mins)
+commit: b08d738c5e3fbac5b0fe635dc10da9e365373964
+branch: jps/t3-lib-component-m1
+
+Refactor approach doc with improved roadmap and quality metrics
+
+  doc/approach.md
+
+time: 01:01  (+2 mins)
+commit: 4a181cf63d6b5c66d5fb033322f66e77d8895457 [MERGE]
+branch: main
+
+Merge pull request #2 from jpshack-at-palomar/cursor/integrate-checklists-with-milestone-overviews-7253
+
+
+time: 01:04  (+2 mins)
+commit: 965dbadeb184eb1d58f482ec559068c15201a186
+branch: jps/t3-lib-component-m1
+
+feat: implement coordinate system utilities and fix type imports
+
+  doc/t3-lib-component.md
+  packages/lib/src/game/game-board.ts
+  packages/lib/src/game/game-engine.ts
+  packages/lib/src/game/move-analyzer.ts
+  packages/lib/src/players/human-player.ts
+  packages/lib/src/players/player.ts
+  packages/lib/src/players/random-ai-player.ts
+  packages/lib/src/players/strategic-ai-player.ts
+  packages/lib/src/utils/coordinate-system.ts
+  packages/lib/test/players/random-ai-player.test.ts
+  packages/lib/test/utils/coordinate-system.test.ts
+
+time: 01:12  (+8 mins)
+commit: bc581448a12a3652be38cd5e3c84a44f08988eae
+branch: jps/t3-lib-component-m1
+
+chore: fixed type errors
+
+  packages/lib/src/game/game-engine.ts
+
+time: 01:36  (+23 mins)
+commit: 8ca5adc04b7e4502e5ab467c7d39ad25ad1ddb13
+branch: jps/t3-lib-component-m1
+
+feat: implement main library export with comprehensive validation tests
+
+  packages/lib/src/index.ts
+  packages/lib/test/index.test.ts
+
+time: 01:39  (+3 mins)
+commit: 011afa9d4e1271ba5e5ba7c32147a979da98efa3
+branch: jps/t3-lib-component-m1
+
+feat: implement comprehensive AI vs AI integration tests
+
+  packages/lib/test/integration/ai-vs-ai.test.ts
+
+time: 01:42  (+2 mins)
+commit: 253f0f54e5374ed9e5feca5b41cbadbe5adcc789
+branch: jps/t3-lib-component-m1
+
+feat: implement comprehensive full game scenario integration tests
+
+  packages/lib/test/integration/full-game-scenarios.test.ts
+
+time: 01:47  (+4 mins)
+commit: 4ea04ae9cd9421d3b5570c750bbad5e08f499e2a
+branch: jps/t3-lib-component-m1
+
+feat: implement comprehensive performance and load tests
+
+  packages/lib/test/integration/performance.test.ts
+
+time: 01:52  (+5 mins)
+commit: 2650b2e5492577c4e554c90df6a885f23ddab079 [MERGE]
+branch: main
+
+Merge pull request #1 from jpshack-at-palomar/jps/t3-lib-component-m1
+
+
+time: 02:02  (+9 mins)
+commit: 8bb1455f35b52a39746b16c79848fec41fc59f0e
+branch: jps/t3-lib-component-m1
+
+docs: milestone checklists in better order for cli
+
+  doc/t3-cli.md
+
+time: 02:06  (+3 mins)
+commit: 012e87558b91a0c9a58f5ad8dc2da05165fd542e [MERGE]
+branch: main
+
+Merge pull request #3 from jpshack-at-palomar/jps/t3-lib-component-m1
+
+
+time: 03:10  (+63 mins)
+commit: 434bbe7147cec5b7131a3c0a95da512709fd26ad
+branch: jps/cli2
+
+feat: cli2
+
+  eslint.config.js
+  package.json
+  packages/cli2/.github/workflows/onPushToMain.yml
+  packages/cli2/.github/workflows/onRelease.yml
+  packages/cli2/.github/workflows/test.yml
+  packages/cli2/.gitignore
+  packages/cli2/.mocharc.json
+  packages/cli2/.prettierrc.json
+  packages/cli2/README.md
+  packages/cli2/bin/dev.cmd
+  packages/cli2/bin/dev.js
+  packages/cli2/bin/run.cmd
+  packages/cli2/bin/run.js
+  packages/cli2/eslint.config.mjs
+  packages/cli2/package.json
+  packages/cli2/src/commands/game/index.ts
+  packages/cli2/src/index.ts
+  packages/cli2/test/commands/game/index.test.ts
+  packages/cli2/test/tsconfig.json
+  packages/cli2/tsconfig.json
+  packages/lib/package.json
+  pnpm-lock.yaml
+
+time: 03:26  (+16 mins)
+commit: ec96a8e67c912d0b379a4a2a4bfb68f27db19250
+branch: main
+
+chore: removed debugging from github workflow
+
+  .github/workflows/ci.yml
+  doc/approach.md
+  eslint.config.js
+
+time: 05:32  (+125 mins)
+commit: b9e7ab37de5b7565ced9cd9d9ea8004bf20de156
+branch: main
+
+4.2.1: CLI type definitions
+
+  doc/approach.md
+  packages/cli/bin/run.js
+  packages/cli/package.json
+  packages/cli/src/index.ts
+  packages/cli/src/types/cli.ts
+  packages/cli/test/types/cli.test.ts
+  packages/cli/tsconfig.json
+  packages/cli/vitest.config.ts
+  pnpm-lock.yaml
+
+time: 05:37  (+4 mins)
+commit: 53358b82e252777880e3f3444e9017258619fc0c
+branch: main
+
+4.2.2: Test utilities integration
+
+  packages/cli/.eslintrc.json
+  packages/cli/test/utils/oclif-test-utils.ts
+  packages/cli/test/utils/test-utils.test.ts
+  packages/cli/test/utils/test-utils.ts
+  packages/cli/tsconfig.json
+
+time: 05:45  (+8 mins)
+commit: e9ba7cf7339b2560571e368cd37e5408f0ee75db
+branch: jps/t3-command
+
+4.3.1: Game Controller implementation
+
+  packages/cli/src/utils/game-controller.ts
+  packages/cli/test/utils/game-controller.test.ts
+  packages/cli/vitest.config.ts
+
+time: 06:52  (+67 mins)
+commit: ef62361ab5ac9e4e0d7394fc892d19aa0c45a5f6
+branch: main
+
+WIP on main: ec96a8e chore: removed debugging from github workflow
+
+
+time: 06:52  (+0 mins)
+commit: 249c3017688a5117b8e0c0f8f4997f997ec9dbf0
+branch: main
+
+index on main: ec96a8e chore: removed debugging from github workflow
+
+  doc/pr-01-review-01.md
+  doc/project-summary.md
+  doc/t3-cli-notes.txt
+  doc/t3-fastify.md
+  doc/t3-react-minimal.md
+  doc/t3-react.md
+  doc/transcript.srt
+  packages/cli2/oclif.manifest.json
+
+time: 06:59  (+7 mins)
+commit: 3cf3969de3c8bc6e4a33b74a1d761c300a065191
+branch: main
+
+docs: added previously uncommitted docs
+
+  doc/pr-01-review-01.md
+  doc/project-summary.md
+  doc/t3-cli-notes.txt
+  doc/t3-fastify.md
+  doc/t3-react-minimal.md
+  doc/t3-react.md
+  doc/transcript.srt
+  packages/cli2/oclif.manifest.json

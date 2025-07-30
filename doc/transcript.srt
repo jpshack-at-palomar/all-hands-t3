@@ -1,0 +1,5383 @@
+1
+00:00:00,750 --> 00:00:03,010
+Alright, let's start that clock here.
+
+2
+00:00:04,770 --> 00:00:07,310
+Alright, you have three hours.
+
+3
+00:00:09,850 --> 00:00:14,630
+Clock, there we go. Um, and it's
+
+4
+00:00:14,631 --> 00:00:19,270
+my opportunity to, uh, today to apply for a role at,
+
+5
+00:00:19,570 --> 00:00:21,850
+uh, all hands.
+
+6
+00:00:22,470 --> 00:00:24,824
+And we're gonna I'm going to do that with, that coding exercise.
+
+7
+00:00:25,764 --> 00:00:27,964
+Umm, that has been assigned.
+
+8
+00:00:28,624 --> 00:00:31,984
+Let me just let everybody know who I am here.
+
+9
+00:00:32,244 --> 00:00:36,604
+This is, uh, you probably don't need a picture because you see me right
+
+10
+00:00:36,605 --> 00:00:39,304
+now, but just so you remember who I am.
+
+11
+00:00:40,084 --> 00:00:43,244
+Um, I'm John Shackleford, currently working,
+
+12
+00:00:43,744 --> 00:00:46,184
+um, independently with, um,
+
+13
+00:00:46,364 --> 00:00:49,668
+Palomar Digital. Um. Um, my own little startup,
+
+14
+00:00:50,128 --> 00:00:53,008
+uh, with a former colleague of mine. And,
+
+15
+00:00:53,668 --> 00:00:56,448
+um, today we're going to be doing tic-tac-toe.
+
+16
+00:00:56,928 --> 00:01:00,148
+Alright. So, um,
+
+17
+00:01:01,008 --> 00:01:03,988
+I think what I want to do,
+
+18
+00:01:04,528 --> 00:01:09,468
+I'm going to divide my three hours into six,
+
+19
+00:01:09,828 --> 00:01:11,988
+thirty minute chunks. And the very first one,
+
+20
+00:01:11,989 --> 00:01:14,912
+on is going to be mostly about, you know,
+
+21
+00:01:14,932 --> 00:01:19,252
+getting things set up and getting the foundations laid for real productivity.
+
+22
+00:01:20,412 --> 00:01:24,932
+And then, the last thirty minutes is going to be for kind of final
+
+23
+00:01:24,933 --> 00:01:28,072
+polish and make sure we get to the end of something that's worth showing.
+
+24
+00:01:29,272 --> 00:01:31,612
+Um, and, uh,
+
+25
+00:01:31,772 --> 00:01:36,436
+so that gives me, you know, really four thirty minute chunks to- it,
+
+26
+00:01:36,596 --> 00:01:40,936
+um, great features in. So I want to talk a little bit about my
+
+27
+00:01:40,937 --> 00:01:43,516
+approach to the project. Um, but,
+
+28
+00:01:43,996 --> 00:01:48,556
+while I do that, and while I can prepare some other notes about the
+
+29
+00:01:48,557 --> 00:01:52,616
+project, I want an agent running in the background to make the best use
+
+30
+00:01:52,617 --> 00:01:55,696
+of time. So, I'm going to start by getting,
+
+31
+00:01:56,136 --> 00:02:00,296
+um, the first bit going, and then we'll come back and look at,
+
+32
+00:02:00,560 --> 00:02:02,760
+Umm, my approach to the project and,
+
+33
+00:02:03,020 --> 00:02:07,360
+and that sort of thing. Okay. So first what I'm going to do is,
+
+34
+00:02:07,840 --> 00:02:10,940
+um, do a little voice recording,
+
+35
+00:02:11,760 --> 00:02:15,040
+and, and that'll just make it easier for me to prompt,
+
+36
+00:02:15,620 --> 00:02:17,800
+um, AI for the first bit.
+
+37
+00:02:18,220 --> 00:02:21,840
+So I'm using a little utility that's part of the Limsie Suite I've been
+
+38
+00:02:21,841 --> 00:02:24,360
+working on, and,
+
+39
+00:02:24,724 --> 00:02:28,004
+we just want the speech command,
+
+40
+00:02:28,084 --> 00:02:30,484
+or the recording command,
+
+41
+00:02:30,544 --> 00:02:33,844
+and, uh, just make sure I remember how to do it.
+
+42
+00:02:35,064 --> 00:02:37,484
+Oh, let's see. Are we using the wrong?
+
+43
+00:02:42,944 --> 00:02:45,004
+Alright, let's see if that works.
+
+44
+00:02:46,864 --> 00:02:49,868
+Alright, so, Umm,
+
+45
+00:02:50,288 --> 00:02:52,708
+dash F, and dash meter?
+
+46
+00:02:53,208 --> 00:02:57,388
+Okay. ,ish F,
+
+47
+00:02:57,728 --> 00:03:02,468
+and then we'll put it on the desktop. And this will be my
+
+48
+00:03:02,469 --> 00:03:06,488
+umm,
+
+49
+00:03:06,489 --> 00:03:10,888
+Oh, it's okay. Alright.
+
+50
+00:03:10,889 --> 00:03:13,012
+All right. Umm,
+
+51
+00:03:13,792 --> 00:03:17,612
+so we're going to be building a tic-tac-toe game,
+
+52
+00:03:17,613 --> 00:03:22,132
+and the first thing that we want to do is get the model classes
+
+53
+00:03:22,133 --> 00:03:24,832
+right. And umm,
+
+54
+00:03:25,752 --> 00:03:29,992
+I want to keep the model separate from other functions,
+
+55
+00:03:29,993 --> 00:03:32,652
+umm, because this could get incorporated,
+
+56
+00:03:32,653 --> 00:03:35,992
+umm, into lots of different.
+
+57
+00:03:36,576 --> 00:03:38,676
+You know, possible projects. So,
+
+58
+00:03:39,156 --> 00:03:41,196
+no display logic, just the model.
+
+59
+00:03:41,996 --> 00:03:44,336
+And umm, we want to use, uhh, vtest,
+
+60
+00:03:45,456 --> 00:03:49,836
+and umm, we want to use umm,
+
+61
+00:03:50,036 --> 00:03:53,096
+the latest, umm, LTS version of node.
+
+62
+00:03:54,196 --> 00:03:57,576
+And umm, I'm going to be using uhh,
+
+63
+00:03:58,116 --> 00:04:01,600
+uhh, a template project to- use MPM,
+
+64
+00:04:02,000 --> 00:04:04,460
+or PMPM, umm,
+
+65
+00:04:04,660 --> 00:04:07,180
+to set up, umm, monorepo,
+
+66
+00:04:07,460 --> 00:04:09,860
+because we're likely have a number of different components.
+
+67
+00:04:10,740 --> 00:04:14,380
+Let's talk about the model for the FixActo game.
+
+68
+00:04:14,660 --> 00:04:16,680
+So we're going to need umm,
+
+69
+00:04:17,420 --> 00:04:20,860
+something that represents the game board, and umm,
+
+70
+00:04:20,940 --> 00:04:24,680
+the game state, and umm, history of the turns that are taken uhh,
+
+71
+00:04:24,681 --> 00:04:28,444
+uhh, we're going to need a player, and we're going to need umm,
+
+72
+00:04:29,404 --> 00:04:32,464
+a way for different players to play,
+
+73
+00:04:33,324 --> 00:04:35,804
+human players, umm, different AI players,
+
+74
+00:04:36,264 --> 00:04:39,144
+and so on. So we want to make sure that umm,
+
+75
+00:04:39,284 --> 00:04:42,504
+that the model is flexible and allows for umm,
+
+76
+00:04:42,644 --> 00:04:45,104
+that, and that, that, uhh,
+
+77
+00:04:45,424 --> 00:04:48,744
+uhh, that the API easily accom- .
+
+78
+00:04:48,768 --> 00:04:52,288
+It's, umm, different turn takers. Umm,
+
+79
+00:04:52,568 --> 00:04:57,228
+I'm trying to think of there are any other things that we
+
+80
+00:04:57,229 --> 00:05:01,508
+need to think about. Umm, we'll have a couple of different AI's to start
+
+81
+00:05:01,509 --> 00:05:05,888
+with. We'll have a random turn taker that just takes the first available turn.
+
+82
+00:05:06,628 --> 00:05:09,408
+Or, you know, a random of, of the available turns.
+
+83
+00:05:10,328 --> 00:05:12,808
+Umm, and,
+
+84
+00:05:12,832 --> 00:05:16,492
+Umm, the other thing I think is kind of interesting is,
+
+85
+00:05:16,493 --> 00:05:20,352
+you know, how do you compute the best move in tic-tac-toe?
+
+86
+00:05:20,932 --> 00:05:23,072
+You know, if it were a more complicated game,
+
+87
+00:05:23,612 --> 00:05:27,052
+you would use like a red black tree or something like that to kind
+
+88
+00:05:27,053 --> 00:05:31,292
+of like, you know, find the best move for something like tic-tac-toe.
+
+89
+00:05:31,592 --> 00:05:33,952
+There's really only eight ways to win.
+
+90
+00:05:34,252 --> 00:05:36,872
+So, um, it would be not,
+
+91
+00:05:36,896 --> 00:05:39,816
+Nice if we could get, um,
+
+92
+00:05:40,216 --> 00:05:45,056
+some output analysis to
+
+93
+00:05:45,057 --> 00:05:48,996
+help us with, um, kind of that,
+
+94
+00:05:49,016 --> 00:05:51,776
+the action space versus the,
+
+95
+00:05:51,777 --> 00:05:54,396
+you know, the game environment and, um,
+
+96
+00:05:55,196 --> 00:05:58,216
+so, um,
+
+97
+00:05:58,596 --> 00:06:00,936
+knowing, you know, what the available,
+
+98
+00:06:01,390 --> 00:06:03,850
+turn options are, it would be important.
+
+99
+00:06:04,690 --> 00:06:06,850
+Um, I think I also want to have, like,
+
+100
+00:06:06,851 --> 00:06:12,270
+a grid system so that you could easily refer to turns with,
+
+101
+00:06:12,271 --> 00:06:15,810
+like, letters representing columns, numbers representing rows.
+
+102
+00:06:17,110 --> 00:06:21,370
+Um, what else do we want in there?
+
+103
+00:06:24,350 --> 00:06:28,954
+Um, I'm trying to
+
+104
+00:06:28,955 --> 00:06:31,774
+think of anything else we need to think about.
+
+105
+00:06:33,834 --> 00:06:36,854
+For tic-tac-toe. Oh,
+
+106
+00:06:36,994 --> 00:06:39,594
+yeah, I know. It would be kind of nice to have,
+
+107
+00:06:39,595 --> 00:06:42,114
+um,
+
+108
+00:06:42,674 --> 00:06:45,574
+a function in our game engine that would,
+
+109
+00:06:45,794 --> 00:06:50,948
+umm, that would- tell us sort of what the-
+
+110
+00:06:50,949 --> 00:06:53,268
+available,
+
+111
+00:06:53,928 --> 00:06:58,468
+you know, what-what the next best moves are for
+
+112
+00:06:58,469 --> 00:07:00,828
+each player, you know, in-in ranked order.
+
+113
+00:07:01,248 --> 00:07:04,468
+Um, and-and in other words, like, uh,
+
+114
+00:07:04,768 --> 00:07:07,528
+you know, here's a move that could win in one turn.
+
+115
+00:07:07,788 --> 00:07:10,588
+Here's a move that could end in two-win in two turns.
+
+116
+00:07:10,988 --> 00:07:13,672
+Here's a move that would-could win in- three turns,
+
+117
+00:07:13,673 --> 00:07:15,872
+um, so that you could, you know,
+
+118
+00:07:15,952 --> 00:07:19,752
+kind of rank them that way. Um, that might be,
+
+119
+00:07:19,812 --> 00:07:25,352
+uh, kind of duplicate from- what
+
+120
+00:07:25,353 --> 00:07:28,212
+you would do with a red black tree if we ever use such a
+
+121
+00:07:28,213 --> 00:07:33,832
+thing. Um, trying to think if there's any other core
+
+122
+00:07:33,833 --> 00:07:36,112
+ideas we need in the item.
+
+123
+00:07:36,113 --> 00:07:38,996
+I don't. I don't think so. Okay,
+
+124
+00:07:39,196 --> 00:07:41,836
+so this is going to go in the lib directory, um,
+
+125
+00:07:42,956 --> 00:07:45,576
+of our packages directory in our,
+
+126
+00:07:46,036 --> 00:07:48,336
+um, in our project.
+
+127
+00:07:48,636 --> 00:07:53,436
+Okay, I think that's enough. And now let's,
+
+128
+00:07:53,536 --> 00:07:59,776
+uh, go ahead and see
+
+129
+00:07:59,777 --> 00:08:02,640
+if we can- sorry for moving. and just a little picture around.
+
+130
+00:08:06,020 --> 00:08:09,280
+So, oh.
+
+131
+00:08:12,180 --> 00:08:14,860
+That's time. There it is.
+
+132
+00:08:14,980 --> 00:08:18,360
+There it is. Okay. So,
+
+133
+00:08:18,540 --> 00:08:22,960
+uh, let's go ahead and make a code directory for this.
+
+134
+00:08:23,300 --> 00:08:26,734
+Make sure. Code.
+
+135
+00:08:41,984 --> 00:08:44,904
+Actually, I want to do it like this.
+
+136
+00:08:44,905 --> 00:08:45,124
+Yes.
+
+137
+00:09:05,038 --> 00:09:07,458
+And, we're gonna open up cursor,
+
+138
+00:09:08,218 --> 00:09:12,778
+and we're gonna- and
+
+139
+00:09:12,779 --> 00:09:12,938
+I.
+
+140
+00:09:37,536 --> 00:09:39,856
+It's a goodness I'm showing up.
+
+141
+00:09:49,826 --> 00:09:50,186
+That's interesting.
+
+142
+00:09:56,186 --> 00:09:58,606
+Alright, let me just, whoa,
+
+143
+00:09:58,786 --> 00:09:59,506
+no, don't do that!
+
+144
+00:10:18,700 --> 00:10:23,420
+I'll just do it like this. I'm gonna create a little dog folder
+
+145
+00:10:23,421 --> 00:10:24,080
+here. There.
+
+146
+00:10:33,454 --> 00:10:38,034
+And, bring that in
+
+147
+00:10:38,035 --> 00:10:42,874
+there. Okay. And that's the original
+
+148
+00:10:42,875 --> 00:10:44,994
+set of instructions that we received.
+
+149
+00:10:47,274 --> 00:10:49,694
+So now I should be able to. Got it.
+
+150
+00:10:49,728 --> 00:10:52,548
+It'll be referenced by active type. Okay. So the next thing I want to
+
+151
+00:10:52,549 --> 00:10:56,268
+do is,
+
+152
+00:10:56,269 --> 00:10:58,668
+umm,
+
+153
+00:10:59,108 --> 00:11:02,508
+let's have the agent think about that for a minute.
+
+154
+00:11:20,942 --> 00:11:23,582
+Now, it will do some summarizing.
+
+155
+00:11:23,882 --> 00:11:28,082
+But while it's doing that, what I want to do is find a design
+
+156
+00:11:28,083 --> 00:11:32,402
+document that I have a specific format I like to use for design documents.
+
+157
+00:11:34,022 --> 00:11:37,822
+So, I'm going to try.
+
+158
+00:11:37,856 --> 00:11:40,196
+I'm going to find a good example.
+
+159
+00:11:43,636 --> 00:11:46,116
+And, let's see,
+
+160
+00:11:46,276 --> 00:11:48,436
+I think, in the Allen project I have.
+
+161
+00:11:49,676 --> 00:11:51,916
+A bunch of,
+
+162
+00:11:52,036 --> 00:11:52,276
+um.
+
+163
+00:11:56,896 --> 00:12:01,896
+And, I think this one for,
+
+164
+00:12:13,010 --> 00:12:15,470
+I think it was something that would have been a different branch.
+
+165
+00:12:17,710 --> 00:12:21,130
+Yeah, yeah. This,
+
+166
+00:12:21,550 --> 00:12:23,690
+this branch is a little better.
+
+167
+00:12:23,691 --> 00:12:24,010
+There we go.
+
+168
+00:12:29,424 --> 00:12:33,264
+Huh. Why is it not letting me click?
+
+169
+00:12:37,904 --> 00:12:40,244
+Alright. Yeah,
+
+170
+00:12:40,484 --> 00:12:42,924
+I think like this one,
+
+171
+00:12:43,044 --> 00:12:47,084
+a conversation history. I thought I had an M2 in here that was good.
+
+172
+00:12:48,444 --> 00:12:51,728
+Oh, I'll bet that's in a different branch. M2 branch.
+
+173
+00:12:56,388 --> 00:12:59,528
+Okay. I mean, these are all pretty much the same,
+
+174
+00:12:59,768 --> 00:13:02,448
+but umm, this one came out pretty well.
+
+175
+00:13:07,168 --> 00:13:09,688
+Umm. Umm. Umm.
+
+176
+00:13:09,968 --> 00:13:13,348
+Umm. Start on the A design.
+
+177
+00:13:35,372 --> 00:13:38,012
+Actually, let's get that from the template.
+
+178
+00:13:38,013 --> 00:13:42,656
+But. That I'm gonna use. Think if I go back to
+
+179
+00:13:42,657 --> 00:13:46,776
+GitHub. Umm,
+
+180
+00:13:47,876 --> 00:13:50,836
+aaand, kind of my repositories.
+
+181
+00:13:52,996 --> 00:13:57,696
+PMPM template. This is just a nice template that already
+
+182
+00:13:57,697 --> 00:14:00,116
+has my GitHub workflow. And,
+
+183
+00:14:00,436 --> 00:14:03,720
+you know, tools I like to use. You Alrighty to go.
+
+184
+00:14:04,620 --> 00:14:07,560
+So, I can get started easier with that.
+
+185
+00:14:07,880 --> 00:14:11,220
+I wasn't sure if doing that would be cheating. Umm,
+
+186
+00:14:11,420 --> 00:14:14,200
+to use that template. But I did ask Ash.
+
+187
+00:14:15,400 --> 00:14:19,140
+I think I have a little picture. You should've said.
+
+188
+00:14:20,280 --> 00:14:23,320
+Basically, she said. It's okay.
+
+189
+00:14:24,460 --> 00:14:28,204
+So, thank you, Ash. Umm.
+
+190
+00:14:30,984 --> 00:14:36,984
+Alright. So,
+
+191
+00:14:37,224 --> 00:14:39,064
+there is our repo structure. sure
+
+192
+00:14:51,278 --> 00:14:54,618
+Alright. So now,
+
+193
+00:14:54,619 --> 00:14:58,358
+let me give it that design dock.
+
+194
+00:15:04,718 --> 00:15:09,258
+Okay. Here
+
+195
+00:15:09,259 --> 00:15:13,598
+is the um, design dock format.
+
+196
+00:15:13,599 --> 00:15:18,252
+I like it. I like to
+
+197
+00:15:18,253 --> 00:15:22,652
+use. Uhm,
+
+198
+00:15:25,172 --> 00:15:30,252
+please stop at the end
+
+199
+00:15:30,253 --> 00:15:32,432
+of section 2,
+
+200
+00:15:32,992 --> 00:15:38,472
+because we will do-
+
+201
+00:15:38,496 --> 00:15:41,316
+discuss. And then,
+
+202
+00:15:41,317 --> 00:15:44,376
+um, where-where is that document gonna go?
+
+203
+00:15:45,256 --> 00:15:49,876
+Let's put it in tic-tac-toe.
+
+204
+00:15:50,176 --> 00:15:52,396
+Let's call-let's call tic-tac-toe T3. Okay.
+
+205
+00:15:53,156 --> 00:15:57,776
+Um, and we're gonna put that in the-and we'll
+
+206
+00:15:57,777 --> 00:15:59,916
+just say.
+
+207
+00:16:22,040 --> 00:16:24,620
+Alright. And that'll keep it busy for a bit.
+
+208
+00:16:25,480 --> 00:16:27,854
+Because there's quite a bit to that. That, um, design document.
+
+209
+00:16:29,014 --> 00:16:31,314
+And now I think we can talk about,
+
+210
+00:16:31,315 --> 00:16:34,374
+kind of my whole approach to this problem.
+
+211
+00:16:34,954 --> 00:16:39,214
+And, um, so I'm gonna do another recording. To capture that.
+
+212
+00:16:40,574 --> 00:16:44,874
+And, um, I don't know. Just,
+
+213
+00:16:44,875 --> 00:16:47,234
+bring up a record again.
+
+214
+00:16:49,134 --> 00:16:50,094
+Let me see.
+
+215
+00:17:08,568 --> 00:17:11,448
+Okay. So now we're talking about the project as a whole.
+
+216
+00:17:12,448 --> 00:17:14,548
+So, um. I'm,
+
+217
+00:17:14,752 --> 00:17:17,212
+One of the things that, umm,
+
+218
+00:17:17,672 --> 00:17:22,332
+you'll notice in the technical assessment is that,
+
+219
+00:17:22,333 --> 00:17:25,452
+you know, the time limit is really critical. And for me,
+
+220
+00:17:25,492 --> 00:17:29,032
+that will be the biggest challenge. It's sort of balancing. How do I slow
+
+221
+00:17:29,033 --> 00:17:31,452
+down and show, like, that I know,
+
+222
+00:17:32,452 --> 00:17:35,092
+engineering disciplines? Um, and,
+
+223
+00:17:35,752 --> 00:17:38,132
+you know, actually I'm fast enough to be productive.
+
+224
+00:17:38,816 --> 00:17:41,816
+You know, I think the biggest thing is, like, avoiding tarpets because,
+
+225
+00:17:42,576 --> 00:17:46,136
+um, it doesn't take much to sink three hours if you get stuck on
+
+226
+00:17:46,137 --> 00:17:49,156
+something. So, having this, you know,
+
+227
+00:17:49,236 --> 00:17:51,256
+every 30 minutes stop is gonna help me.
+
+228
+00:17:51,556 --> 00:17:55,256
+In fact, how am I doing on time? I'm accidentally paused it.
+
+229
+00:17:56,056 --> 00:18:01,016
+Unpause. Um, so,
+
+230
+00:18:01,276 --> 00:18:03,420
+how am I doing? So,
+
+231
+00:18:03,460 --> 00:18:07,400
+I guess I've got just a few minutes left.
+
+232
+00:18:09,320 --> 00:18:12,000
+Um, now, um,
+
+233
+00:18:12,740 --> 00:18:15,040
+okay, let's talk about, ah, anyway.
+
+234
+00:18:15,640 --> 00:18:20,340
+Uh, it says here you could do a
+
+235
+00:18:20,341 --> 00:18:23,380
+basic, simple front end. You could do a CLI.
+
+236
+00:18:24,500 --> 00:18:26,540
+You could do a back end.
+
+237
+00:18:27,214 --> 00:18:30,854
+Umm, API. You could do a containerized deployment.
+
+238
+00:18:31,294 --> 00:18:34,114
+You could deploy it, and so on. Okay, so, thank for me.
+
+239
+00:18:34,654 --> 00:18:36,794
+The main thing is, you have to have something,
+
+240
+00:18:37,094 --> 00:18:40,334
+right? It has to be a playable tic-tac-toe game. And so,
+
+241
+00:18:40,335 --> 00:18:44,174
+I think our goal is to be able to reduce risk in this project
+
+242
+00:18:44,175 --> 00:18:48,154
+by get to something playable as fast as possible.
+
+243
+00:18:49,234 --> 00:18:51,928
+And then make it better or do con- and interesting projects,
+
+244
+00:18:51,929 --> 00:18:56,088
+um, you know, after that basic part was done.
+
+245
+00:18:56,648 --> 00:19:00,608
+So, what would be like the most basic implementation of tic-tac-toe?
+
+246
+00:19:00,848 --> 00:19:05,188
+Well, um, I was recently playing tic-tac-toe with my kids in the car on
+
+247
+00:19:05,189 --> 00:19:07,848
+a long trip. Uh, I was trying to keep them busy,
+
+248
+00:19:07,849 --> 00:19:11,808
+and so we decided that we would try like like mental tic-tac-toe,
+
+249
+00:19:12,108 --> 00:19:15,048
+you know, where you didn't actually get,
+
+250
+00:19:15,072 --> 00:19:17,332
+See the board, you just said, you know, A1,
+
+251
+00:19:18,132 --> 00:19:20,392
+you know, B2, and so on.
+
+252
+00:19:20,972 --> 00:19:24,232
+And, um, that was a lot of fun for them, for the younger ones.
+
+253
+00:19:24,972 --> 00:19:27,452
+And, um, that would be simple.
+
+254
+00:19:27,712 --> 00:19:29,832
+We wouldn't have to think about any kind of layout, or presentation,
+
+255
+00:19:30,072 --> 00:19:32,212
+or, you know. As long as the game engine works,
+
+256
+00:19:32,792 --> 00:19:34,932
+and you can, you know,
+
+257
+00:19:35,052 --> 00:19:38,252
+give your moves, and simple, you know,
+
+258
+00:19:38,992 --> 00:19:41,476
+roll. role. We'll call them type, or column row type format,
+
+259
+00:19:41,536 --> 00:19:46,316
+then you're fine. Um, so I think that's the first implementation.
+
+260
+00:19:46,736 --> 00:19:49,116
+And, of course, the whole library is,
+
+261
+00:19:49,117 --> 00:19:51,856
+is then there. And then we could start doing other things.
+
+262
+00:19:51,996 --> 00:19:54,816
+We could do a React app, um,
+
+263
+00:19:55,316 --> 00:19:58,616
+or more sophisticated CLI version,
+
+264
+00:19:58,796 --> 00:20:02,316
+or something like that. I mean, things I would really love to do are,
+
+265
+00:20:02,317 --> 00:20:04,340
+like, the- voice, um,
+
+266
+00:20:04,640 --> 00:20:08,020
+voice-activated. That could be done either from the command line,
+
+267
+00:20:08,180 --> 00:20:12,000
+or it could be done in the browser using the kind of voice libraries
+
+268
+00:20:12,001 --> 00:20:14,220
+that are built into browsers nowadays. Um.
+
+269
+00:20:16,280 --> 00:20:19,700
+I mean, what I would love to do, actually, is have it on Apple
+
+270
+00:20:19,701 --> 00:20:22,540
+TV, and, um, like,
+
+271
+00:20:22,580 --> 00:20:24,780
+have your phone be the microphone,
+
+272
+00:20:24,781 --> 00:20:27,020
+you know, and so you could actually- Actually,
+
+273
+00:20:27,264 --> 00:20:29,964
+Play it talking to your phone, and then have it show up on Apple
+
+274
+00:20:29,965 --> 00:20:32,344
+TV. There's no way I'm doing that in three hours, so.
+
+275
+00:20:33,024 --> 00:20:35,784
+As much as I'd like to do that, that's off the table.
+
+276
+00:20:36,304 --> 00:20:38,984
+Uh, another thing that would be really cool,
+
+277
+00:20:40,684 --> 00:20:44,424
+be to do, like, a touch screen, Raspberry Pi,
+
+278
+00:20:44,724 --> 00:20:49,404
+you know, device. And I think I've got a touch screen that
+
+279
+00:20:49,405 --> 00:20:52,028
+I could use, and I could steal John Andrew's- Andrew. Just Raspberry Pi,
+
+280
+00:20:52,148 --> 00:20:56,688
+that would be fun. But that also is not gonna fit
+
+281
+00:20:56,689 --> 00:20:59,008
+in three hours, probably. So, um,
+
+282
+00:20:59,588 --> 00:21:02,148
+they're just limits to what we're gonna be able to do with the time
+
+283
+00:21:02,149 --> 00:21:04,948
+we've got. I think the main thing is,
+
+284
+00:21:04,949 --> 00:21:09,548
+um, if we do go down the React kind of road is like
+
+285
+00:21:09,549 --> 00:21:12,448
+there's all kinds of carpets you could fall into there. Um,
+
+286
+00:21:12,608 --> 00:21:15,248
+so let's, you know, be very careful about that.
+
+287
+00:21:15,249 --> 00:21:19,202
+Yeah. But we should be able to get the first thing up and going
+
+288
+00:21:19,203 --> 00:21:21,902
+in the first iteration or two. Okay.
+
+289
+00:21:22,662 --> 00:21:25,082
+So that's kind of how I'm thinking about this.
+
+290
+00:21:25,942 --> 00:21:28,682
+Um, I understand,
+
+291
+00:21:28,922 --> 00:21:32,022
+my understanding, let's talk about my understanding of what they want.
+
+292
+00:21:32,782 --> 00:21:35,422
+Um, yeah,
+
+293
+00:21:35,582 --> 00:21:38,682
+I want something playable. They want to see my process in the way I'm
+
+294
+00:21:38,683 --> 00:21:42,356
+thinking. Okay, I'm doing that right now, so, um,
+
+295
+00:21:43,376 --> 00:21:45,896
+hopefully they can read a transcript or summarize a transcript.
+
+296
+00:21:46,096 --> 00:21:48,936
+That's even better because this is being awfully long through your hours.
+
+297
+00:21:49,196 --> 00:21:51,516
+Um, what else?
+
+298
+00:21:52,336 --> 00:21:54,476
+Um, rules.
+
+299
+00:21:54,816 --> 00:21:57,636
+I talked about the clarification I got from Ash.
+
+300
+00:21:58,916 --> 00:22:03,156
+Any other sort of assumptions I'm making about rules that I should communicate?
+
+301
+00:22:03,157 --> 00:22:05,240
+Give me a kick. I think, uh,
+
+302
+00:22:05,380 --> 00:22:09,800
+an important one is I- there's nothing in the rules that says I can't
+
+303
+00:22:09,801 --> 00:22:14,520
+borrow code from other projects that I have worked on previously.
+
+304
+00:22:15,660 --> 00:22:18,580
+And, um, so I'll do that. Um,
+
+305
+00:22:19,440 --> 00:22:24,300
+my son and I have been writing little games all
+
+306
+00:22:24,301 --> 00:22:27,260
+summer, so there should be stuff to draw on.
+
+307
+00:22:28,244 --> 00:22:32,524
+Umm, any other rule assumptions I should communicate.
+
+308
+00:22:33,784 --> 00:22:38,624
+I don't think so. I think we're good. I think balancing the time
+
+309
+00:22:38,625 --> 00:22:40,824
+versus, like,
+
+310
+00:22:41,524 --> 00:22:44,804
+showing. I mean, one of the things they talk about here is using an
+
+311
+00:22:44,805 --> 00:22:46,984
+AI credically. So don't just,
+
+312
+00:22:46,985 --> 00:22:49,704
+like, accept the output. Obviously,
+
+313
+00:22:49,705 --> 00:22:52,268
+you know. It's garbage in,
+
+314
+00:22:52,308 --> 00:22:54,748
+garbage out with the AI tools anyway, so, um,
+
+315
+00:22:55,008 --> 00:22:57,348
+hopefully I can demonstrate that just as part of my natural workflow,
+
+316
+00:22:57,349 --> 00:23:00,448
+but I do need to be cognizant of that.
+
+317
+00:23:00,948 --> 00:23:04,448
+Okay, I think I've done all the thinking I need to do about how
+
+318
+00:23:04,449 --> 00:23:08,368
+I'm gonna approach the problem. Maybe we should be more specific about milestones.
+
+319
+00:23:08,369 --> 00:23:12,388
+stones. So milestone one is all about kind of getting the lip going,
+
+320
+00:23:12,408 --> 00:23:14,768
+getting our first, you know,
+
+321
+00:23:15,068 --> 00:23:19,352
+push in into GitHub, getting our workflows running,
+
+322
+00:23:20,212 --> 00:23:23,112
+you know, basic infrastructure. Interation two,
+
+323
+00:23:24,452 --> 00:23:27,052
+like dead simple command line version,
+
+324
+00:23:27,332 --> 00:23:30,652
+or doesn't even have to have a command line interface if I can kick
+
+325
+00:23:30,653 --> 00:23:33,152
+it off. But it has to be playable tic-tac-toe.
+
+326
+00:23:33,512 --> 00:23:36,612
+I think we're gonna do that by just no display.
+
+327
+00:23:37,532 --> 00:23:41,576
+Mental tic-tac-toe. Umm. And against a random player,
+
+328
+00:23:42,096 --> 00:23:44,356
+right? Um, that's milestone, uh,
+
+329
+00:23:44,856 --> 00:23:47,716
+two. And then, milestone three,
+
+330
+00:23:48,416 --> 00:23:50,936
+and four, um, and five,
+
+331
+00:23:50,937 --> 00:23:53,836
+couldn't be, uh, about, like, more sophisticated CLI,
+
+332
+00:23:54,296 --> 00:23:57,156
+or react, or, and I think the way that I'm gonna approach that is,
+
+333
+00:23:57,556 --> 00:23:59,756
+I'm gonna build design documents for everything.
+
+334
+00:24:00,596 --> 00:24:02,736
+Um, and then,
+
+335
+00:24:03,036 --> 00:24:05,060
+I'm going- Thank much for joining me. To, um,
+
+336
+00:24:06,140 --> 00:24:08,640
+run a bunch of those through,
+
+337
+00:24:08,641 --> 00:24:11,160
+um, a cursor agent in parallel,
+
+338
+00:24:11,800 --> 00:24:14,420
+and, you know,
+
+339
+00:24:14,580 --> 00:24:18,520
+we'll take what we get, you know, we'll take the good stuff from the
+
+340
+00:24:18,521 --> 00:24:21,220
+output we get, and we'll discard the rest,
+
+341
+00:24:21,260 --> 00:24:24,300
+and we'll just, you know,
+
+342
+00:24:24,360 --> 00:24:27,100
+try to end with something good by, uh, being selective about,
+
+343
+00:24:27,440 --> 00:24:30,964
+um. . . what we pull in and what we think we can finish
+
+344
+00:24:30,965 --> 00:24:33,704
+and polish. Um, but we won't be, like,
+
+345
+00:24:33,904 --> 00:24:36,664
+I think taking some risks is okay,
+
+346
+00:24:36,684 --> 00:24:39,704
+we just gotta be very careful about time-boxing.
+
+347
+00:24:39,884 --> 00:24:41,964
+Okay, I've talked enough about all this,
+
+348
+00:24:42,504 --> 00:24:44,864
+and I hope I'm still recording.
+
+349
+00:24:45,224 --> 00:24:47,544
+Looks like it. Alright,
+
+350
+00:24:47,944 --> 00:24:51,684
+so now, I should have an approach.
+
+351
+00:24:51,685 --> 00:24:54,688
+How much. Uh,
+
+352
+00:24:55,008 --> 00:24:55,788
+transcript here.
+
+353
+00:25:00,648 --> 00:25:02,908
+Not nearly as many words as you would think it would be.
+
+354
+00:25:03,708 --> 00:25:06,608
+Uhm, for as much time as it took. So,
+
+355
+00:25:07,128 --> 00:25:13,308
+let's uh, turn.
+
+356
+00:25:52,436 --> 00:25:57,396
+Now, let's look at, um, what happened with our other design document here.
+
+357
+00:25:59,416 --> 00:26:04,136
+Alright. So we-
+
+358
+00:26:04,160 --> 00:26:08,800
+We've got the problem statement, post solution,
+
+359
+00:26:09,680 --> 00:26:11,880
+demo implementation standards.
+
+360
+00:26:17,440 --> 00:26:19,700
+Uhh, uhh, okay,
+
+361
+00:26:19,880 --> 00:26:22,580
+there's stuff about demos that I think can be removed.
+
+362
+00:26:25,920 --> 00:26:30,674
+Good assumptions. I'm sure I'm on this. Or a few board
+
+363
+00:26:30,675 --> 00:26:33,574
+moving illnesses. Okay,
+
+364
+00:26:33,575 --> 00:26:39,594
+here's our classes. Game
+
+365
+00:26:39,595 --> 00:26:43,694
+board, game state player. Game engine move analyzer.
+
+366
+00:26:45,054 --> 00:26:49,974
+Umm. Not sure
+
+367
+00:26:49,975 --> 00:26:52,628
+if I see anything that represents the actions. 4 4 5 Space.
+
+368
+00:26:56,188 --> 00:26:59,828
+And, Oh, you know, I never told it that we were doing TypeScript.
+
+369
+00:27:00,728 --> 00:27:04,668
+That was not good. Sorry.
+
+370
+00:27:06,308 --> 00:27:09,368
+It's an easy fix later. Okay,
+
+371
+00:27:09,708 --> 00:27:15,208
+so let's interact here. How
+
+372
+00:27:15,209 --> 00:27:20,172
+will we get- at the action space from
+
+373
+00:27:20,173 --> 00:27:22,492
+the current state?
+
+374
+00:27:44,046 --> 00:27:44,966
+Okay, great.
+
+375
+00:27:58,636 --> 00:28:02,516
+I'm gonna make some improvements. I'm gonna move this around.
+
+376
+00:28:02,736 --> 00:28:06,150
+I'm sorry that I keep moving this little bubble around. I have to be
+
+377
+00:28:06,151 --> 00:28:08,270
+able to see what's going on here. Umm,
+
+378
+00:28:08,670 --> 00:28:13,970
+uhh, so,
+
+379
+00:28:14,730 --> 00:28:19,330
+I'm not seeing what you actually changed here.
+
+380
+00:28:22,050 --> 00:28:23,190
+Did you?
+
+381
+00:28:38,964 --> 00:28:43,164
+Okay. Okay,
+
+382
+00:28:43,444 --> 00:28:46,344
+good. Alright, so now,
+
+383
+00:28:46,345 --> 00:28:51,344
+What's,
+
+384
+00:28:52,608 --> 00:28:55,988
+actions from the template are left.
+
+385
+00:28:55,548 --> 00:28:55,988
+left.
+
+386
+00:29:37,362 --> 00:29:38,502
+1, 2, 3 and 4. I'm a little bit more.
+
+387
+00:29:45,136 --> 00:29:50,736
+Okay, while it's doing that, let's clone our template repo and
+
+388
+00:29:50,737 --> 00:29:53,116
+get going with that bit.
+
+389
+00:29:56,296 --> 00:30:00,936
+Alright, so where is that template repo?
+
+390
+00:30:01,956 --> 00:30:07,380
+Oh, it's right here. I must have pulled
+
+391
+00:30:07,381 --> 00:30:11,920
+it up a moment ago, okay. So,
+
+392
+00:30:12,800 --> 00:30:15,840
+I guess what I could do is just,
+
+393
+00:30:16,340 --> 00:30:19,400
+let's say I used this template, create a new repository.
+
+394
+00:30:21,720 --> 00:30:27,340
+And we're gonna call this open plugins T.
+
+395
+00:30:27,341 --> 00:30:32,164
+Two. Two. Two. Three. Umm,
+
+396
+00:30:32,504 --> 00:30:37,944
+and we're gonna make it private. And
+
+397
+00:30:37,945 --> 00:30:43,744
+we're gonna just create it. And we'll just say that this is our take
+
+398
+00:30:43,745 --> 00:30:47,724
+assessment project. Alright,
+
+399
+00:30:47,725 --> 00:30:52,384
+there we go. Getting worried about the time.
+
+400
+00:30:52,385 --> 00:30:55,088
+fine. Oh, we're almost at the end of the first section.
+
+401
+00:30:57,528 --> 00:31:02,408
+Okay. So here's our all hands T3
+
+402
+00:31:02,409 --> 00:31:06,428
+project. And I'm gonna get cloned that.
+
+403
+00:31:16,128 --> 00:31:18,582
+Okay. And now,
+
+404
+00:31:18,922 --> 00:31:22,222
+I'm gonna copy.
+
+405
+00:31:24,182 --> 00:31:29,842
+This are the tic-tac-toe docs
+
+406
+00:31:29,843 --> 00:31:33,442
+directory into the new repo.
+
+407
+00:31:33,842 --> 00:31:40,002
+Cause that's where we're gonna work from now on. Oh,
+
+408
+00:31:40,162 --> 00:31:40,922
+it was T3.0.
+
+409
+00:31:57,586 --> 00:32:03,946
+All of our docs there. Alright, great. All
+
+410
+00:32:03,947 --> 00:32:07,660
+right, now, of course, it's still working on the design doc,
+
+411
+00:32:07,661 --> 00:32:10,740
+so I'm gonna have to do that again, actually. Umm.
+
+412
+00:32:12,440 --> 00:32:17,040
+But, that's okay. It doesn't stop us from making sure that
+
+413
+00:32:17,041 --> 00:32:20,240
+the tests run. Oh,
+
+414
+00:32:20,440 --> 00:32:22,720
+we have to install everything,
+
+415
+00:32:23,320 --> 00:32:26,940
+right? Oh,
+
+416
+00:32:27,260 --> 00:32:30,954
+okay. Let's look at the template. What am I doing wrong here?
+
+417
+00:32:33,454 --> 00:32:35,634
+Pnpm, let's don't, uhm.
+
+418
+00:32:40,374 --> 00:32:42,494
+Okay. And,
+
+419
+00:32:43,254 --> 00:32:45,854
+set up the GitHub Hux.
+
+420
+00:32:49,954 --> 00:32:53,214
+Okay, great. And then let's run.
+
+421
+00:32:53,248 --> 00:32:53,808
+And the build.
+
+422
+00:32:58,648 --> 00:33:02,708
+And then let's just do,
+
+423
+00:33:02,709 --> 00:33:05,048
+Let's just go straight to the test.
+
+424
+00:33:05,628 --> 00:33:06,388
+Pnpm test.
+
+425
+00:33:35,372 --> 00:33:39,632
+Great, test ran. And so.
+
+426
+00:33:39,633 --> 00:33:42,626
+Oh. Stavis.
+
+427
+00:33:51,516 --> 00:33:54,716
+Uhm. Let's actually.
+
+428
+00:33:54,717 --> 00:33:54,936
+Finally.
+
+429
+00:34:08,820 --> 00:34:10,940
+And we're just gonna say.
+
+430
+00:34:12,480 --> 00:34:16,820
+Look at the. Docks.
+
+431
+00:34:21,560 --> 00:34:25,540
+We want to look at the read me.
+
+432
+00:34:27,460 --> 00:34:30,364
+Read me and. time. We want to look at the.
+
+433
+00:34:30,624 --> 00:34:34,084
+This is hard on the eyes. Ahhh. Okay.
+
+434
+00:34:34,784 --> 00:34:38,004
+And we want to look also at our approach stock.
+
+435
+00:34:39,864 --> 00:34:44,424
+Approach stock. And maybe we
+
+436
+00:34:44,425 --> 00:34:47,744
+should also include the assignment.
+
+437
+00:34:51,164 --> 00:34:55,898
+Umm. Mm. Just that drop in
+
+438
+00:34:55,899 --> 00:34:56,098
+there.
+
+439
+00:35:02,818 --> 00:35:05,778
+Is that- is that seeing it? I'm not sure it's seeing it.
+
+440
+00:35:08,278 --> 00:35:12,278
+Is it in the dark folder? Oh.
+
+441
+00:35:12,279 --> 00:35:12,398
+No.
+
+442
+00:35:20,272 --> 00:35:21,392
+Let's also include that.
+
+443
+00:35:32,862 --> 00:35:36,822
+And then say, let's update the readme.
+
+444
+00:35:40,002 --> 00:35:44,096
+Keeping. Keeping. Dev.
+
+445
+00:35:44,556 --> 00:35:46,636
+Workflow. But.
+
+446
+00:35:47,556 --> 00:35:49,636
+Adding. Initial.
+
+447
+00:36:02,956 --> 00:36:04,996
+Okay, great. We're gonna get out.
+
+448
+00:36:05,356 --> 00:36:08,070
+Yeah. Alright.
+
+449
+00:36:09,290 --> 00:36:12,570
+How are we doing? It's working on our design.
+
+450
+00:36:13,410 --> 00:36:18,190
+It's good. Now,
+
+451
+00:36:18,530 --> 00:36:23,010
+wait a minute. I can see.
+
+452
+00:36:27,650 --> 00:36:29,904
+There's a bunch of changes up here. Yeah.
+
+453
+00:36:33,524 --> 00:36:38,284
+It did successfully get rid of the demo stuff we didn't want.
+
+454
+00:36:42,164 --> 00:36:48,284
+But I'm not seeing, did it actually give us all the testing content
+
+455
+00:36:48,285 --> 00:36:49,204
+that we want?
+
+456
+00:36:54,608 --> 00:36:58,708
+Can you imagine an actual space?
+
+457
+00:36:59,548 --> 00:37:01,808
+I was having it, um,
+
+458
+00:37:03,648 --> 00:37:08,308
+I have trouble with
+
+459
+00:37:08,309 --> 00:37:10,768
+the edit tools today. For some reason,
+
+460
+00:37:11,028 --> 00:37:13,168
+it's just really struggling with the edit tools today. Yeah,
+
+461
+00:37:13,169 --> 00:37:17,928
+so a lot of this content is missing. So,
+
+462
+00:37:18,892 --> 00:37:21,192
+Let's see, can we just apply it?
+
+463
+00:37:21,532 --> 00:37:22,912
+No. Copy it.
+
+464
+00:37:31,452 --> 00:37:33,572
+Okay, so I'm just gonna copy it.
+
+465
+00:37:36,332 --> 00:37:40,252
+Oh, good, and there's the section 4 content too.
+
+466
+00:37:40,912 --> 00:37:41,352
+Great.
+
+467
+00:37:45,576 --> 00:37:48,216
+And, looks like it did have some kind of edit problem.
+
+468
+00:37:48,976 --> 00:37:53,516
+So what I'm gonna do is just let it know that there's an
+
+469
+00:37:53,517 --> 00:37:54,196
+edit problem.
+
+470
+00:38:00,936 --> 00:38:03,096
+Looks like,
+
+471
+00:38:07,660 --> 00:38:13,280
+was a problem applying edits in
+
+472
+00:38:13,281 --> 00:38:20,700
+the middle of the dark between,
+
+473
+00:38:20,701 --> 00:38:24,180
+I'll just say here. So it has line references.
+
+474
+00:38:26,140 --> 00:38:28,900
+So if we do it like this, it'll get the line references,
+
+475
+00:38:29,120 --> 00:38:30,624
+it'll know where to look. Okay.
+
+476
+00:38:39,374 --> 00:38:43,954
+And umm, let's see how our bell is done over
+
+477
+00:38:43,955 --> 00:38:47,074
+here. Let's see. Oh, we were working on the read me.
+
+478
+00:38:47,314 --> 00:38:50,614
+Let's go back to the, Where is the read me?
+
+479
+00:38:51,874 --> 00:38:54,174
+It's in a different instance of cursor which,
+
+480
+00:38:54,208 --> 00:38:55,848
+Which is where. No.
+
+481
+00:39:05,088 --> 00:39:08,448
+Here's our read me. Here's our new read me content.
+
+482
+00:39:09,928 --> 00:39:13,728
+Let's fix all the lint errors. Pretty particular.
+
+483
+00:39:14,288 --> 00:39:16,588
+But yeah, it doesn't care, but I care.
+
+484
+00:39:17,088 --> 00:39:20,642
+Okay. It's how we're good.
+
+485
+00:39:21,262 --> 00:39:27,702
+So let's get this bit
+
+486
+00:39:27,703 --> 00:39:29,062
+out of the read me. See you.
+
+487
+00:39:44,116 --> 00:39:46,936
+And there's no new content because we started from a clone.
+
+488
+00:39:47,396 --> 00:39:49,176
+Okay. Get.
+
+489
+00:40:01,576 --> 00:40:04,056
+And what are we saying? We're saying we updated the reading.
+
+490
+00:40:04,316 --> 00:40:08,350
+That's it. Read me. First.
+
+491
+00:40:16,860 --> 00:40:20,280
+So Husky's working. Now we're pushing.
+
+492
+00:40:21,000 --> 00:40:23,520
+And we'll see if our GitHub project works.
+
+493
+00:40:26,000 --> 00:40:30,140
+Okay. Umm.
+
+494
+00:40:30,141 --> 00:40:34,744
+on Alright, let's see how our little
+
+495
+00:40:34,745 --> 00:40:37,004
+dock is coming here. It looks like they deleted those lines.
+
+496
+00:40:37,784 --> 00:40:42,364
+Good. What's down here? These are just basic little lint
+
+497
+00:40:42,365 --> 00:40:44,004
+errors. We can give it off.
+
+498
+00:40:53,984 --> 00:40:57,568
+And, It did not follow the,
+
+499
+00:40:57,569 --> 00:41:01,708
+It's interesting that it, um,
+
+500
+00:41:01,709 --> 00:41:06,748
+If followed the template well enough to know that it's supposed to identify implementation
+
+501
+00:41:06,749 --> 00:41:12,288
+and test steps, but it's also supposed to include test
+
+502
+00:41:12,289 --> 00:41:13,468
+files. miles.
+
+503
+00:41:18,702 --> 00:41:23,262
+And, um, so I'm gonna tell it to do that.
+
+504
+00:41:28,202 --> 00:41:32,122
+Actually, this might be a good time to switch over to our new project.
+
+505
+00:41:33,682 --> 00:41:38,322
+So, a moment ago I did a little copy operation
+
+506
+00:41:38,323 --> 00:41:43,536
+here. Where was that? So
+
+507
+00:41:43,537 --> 00:41:46,416
+let's just do that. Let's be specific,
+
+508
+00:41:46,776 --> 00:41:48,376
+because we've only changed one file.
+
+509
+00:41:56,856 --> 00:42:01,156
+That's gonna go in the dock. Okay.
+
+510
+00:42:01,896 --> 00:42:05,476
+And now from now on, we're not gonna be in this project.
+
+511
+00:42:09,580 --> 00:42:11,780
+We're gonna be in this one, right? Are we?
+
+512
+00:42:12,860 --> 00:42:17,220
+Yes. Okay.
+
+513
+00:42:18,820 --> 00:42:21,560
+Now, this is in my way,
+
+514
+00:42:21,620 --> 00:42:23,860
+sorry. Um, okay.
+
+515
+00:42:28,180 --> 00:42:28,780
+Let's,
+
+516
+00:42:35,024 --> 00:42:36,864
+Let's have it fix this document. Thank you very much for your
+
+517
+00:43:15,538 --> 00:43:17,678
+And that should be in, uhm,
+
+518
+00:43:18,218 --> 00:43:21,712
+ehm. I could just lib, source,
+
+519
+00:43:21,912 --> 00:43:24,952
+uhm,
+
+520
+00:43:24,953 --> 00:43:28,232
+test. Uhm,
+
+521
+00:43:31,152 --> 00:43:36,132
+be sure our tests are using v-test.
+
+522
+00:43:36,133 --> 00:43:36,512
+Next.
+
+523
+00:43:43,316 --> 00:43:45,796
+And, uhm,
+
+524
+00:43:46,456 --> 00:43:47,196
+our checklist section.
+
+525
+00:43:57,956 --> 00:44:02,536
+Every sub section should have
+
+526
+00:44:02,537 --> 00:44:06,236
+both code implementations.
+
+527
+00:44:11,860 --> 00:44:16,400
+Let's let it fix that dock. And let's
+
+528
+00:44:16,401 --> 00:44:21,180
+see how our build did. So here's our all
+
+529
+00:44:21,181 --> 00:44:23,680
+hands T3 project. Let's go to GitHub actions.
+
+530
+00:44:24,440 --> 00:44:27,020
+And, good.
+
+531
+00:44:28,040 --> 00:44:28,100
+Sweet.
+
+532
+00:44:32,364 --> 00:44:34,824
+Test results. Yes,
+
+533
+00:44:35,224 --> 00:44:39,324
+good. Co-coverage reports.
+
+534
+00:44:39,325 --> 00:44:39,544
+words.
+
+535
+00:44:58,478 --> 00:45:01,618
+Okay, great. That's what we want to see.
+
+536
+00:45:05,178 --> 00:45:07,078
+So, what's next?
+
+537
+00:45:11,998 --> 00:45:14,138
+Sorry, build is good. We just,
+
+538
+00:45:14,139 --> 00:45:16,298
+we need this design dark to wrap up.
+
+539
+00:45:17,258 --> 00:45:19,372
+Then we'll give that to an agent, and then we'll start working- right on
+
+540
+00:45:19,373 --> 00:45:21,972
+the design docks for the other pieces.
+
+541
+00:45:23,092 --> 00:45:25,492
+So, how are we doing on time here? Well, we,
+
+542
+00:45:25,732 --> 00:45:28,432
+we finished our first iteration.
+
+543
+00:45:29,272 --> 00:45:32,212
+We're halfway through the second one. Um,
+
+544
+00:45:33,412 --> 00:45:36,352
+I feel like we're running behind by maybe 15,
+
+545
+00:45:36,372 --> 00:45:39,632
+20 minutes of where I want it to be, but I think we'll,
+
+546
+00:45:39,752 --> 00:45:40,812
+we'll be, we'll be alright.
+
+547
+00:45:46,476 --> 00:45:49,176
+Let's see how these dark edits are going.
+
+548
+00:45:49,896 --> 00:45:53,876
+Good, good. This is what I want to see. Full file paths.
+
+549
+00:45:55,496 --> 00:45:59,176
+Um, you can save a ton of problems when you're,
+
+550
+00:45:59,396 --> 00:46:01,696
+you know, generating code, um,
+
+551
+00:46:03,416 --> 00:46:06,596
+in a batch by being very specific about,
+
+552
+00:46:07,630 --> 00:46:10,570
+the, uh, the files, where they are.
+
+553
+00:46:11,210 --> 00:46:13,370
+Umm, cause, ha. Stupid,
+
+554
+00:46:13,690 --> 00:46:18,070
+it's really stupid things that can get the agent confused and waste a lot
+
+555
+00:46:18,071 --> 00:46:20,130
+of cycles, like, it'll get there eventually,
+
+556
+00:46:20,650 --> 00:46:24,110
+but it might take way more turns than necessary.
+
+557
+00:46:25,570 --> 00:46:27,890
+Some of these don't have changes yet.
+
+558
+00:46:28,150 --> 00:46:30,370
+Oh, okay. There's, there's, they're kind of,
+
+559
+00:46:30,530 --> 00:46:33,504
+it's gonna workin' through. I'm not through. Slowly workin' through the doc.
+
+560
+00:46:34,424 --> 00:46:38,244
+Getting those files. And so it hasn't gotten to the checklist section,
+
+561
+00:46:38,444 --> 00:46:43,504
+which is what I'm really concerned about. That's super important to
+
+562
+00:46:43,505 --> 00:46:47,184
+have, woah, a really strong checklist section.
+
+563
+00:46:48,824 --> 00:46:50,284
+That's where the magic happens.
+
+564
+00:46:57,708 --> 00:47:00,028
+Umm, sometimes when it's doing test strategy stuff,
+
+565
+00:47:00,128 --> 00:47:03,088
+it just says, like, really general stuff it already knows.
+
+566
+00:47:03,428 --> 00:47:07,788
+That's not very helpful. It's much better if it's actually,
+
+567
+00:47:07,789 --> 00:47:10,188
+it's more specific.
+
+568
+00:47:22,192 --> 00:47:23,212
+Umm. You
+
+569
+00:48:06,386 --> 00:48:11,760
+This is taking a long time. . . Well,
+
+570
+00:48:11,860 --> 00:48:12,680
+I gotta know what I've expected.
+
+571
+00:48:25,900 --> 00:48:30,620
+Okay. So there's enough here that I can open
+
+572
+00:48:30,621 --> 00:48:32,914
+a new tab. And say,
+
+573
+00:48:33,534 --> 00:48:38,474
+what to create a new dot.
+
+574
+00:48:38,475 --> 00:48:38,574
+. .
+
+575
+00:50:04,236 --> 00:50:07,516
+It looks like this thing is ready to go. I'm seeing.
+
+576
+00:50:07,517 --> 00:50:09,940
+Teen. Test.
+
+577
+00:50:11,020 --> 00:50:11,780
+That's good.
+
+578
+00:50:20,090 --> 00:50:22,630
+Oftentimes the last parts of a checklist,
+
+579
+00:50:23,410 --> 00:50:26,710
+it's funny. It's like a human in the sense that,
+
+580
+00:50:26,910 --> 00:50:31,510
+you know, we understand the stuff that's
+
+581
+00:50:31,511 --> 00:50:34,564
+near to it. And the stuff that's a little further out is kind of
+
+582
+00:50:34,565 --> 00:50:38,124
+hand wavy. And, um, almost always when writing these documents,
+
+583
+00:50:38,125 --> 00:50:40,204
+the AI will, like,
+
+584
+00:50:40,544 --> 00:50:45,144
+append to the end, like, considerations about performance or security,
+
+585
+00:50:45,284 --> 00:50:48,364
+or, you know, boilerplate stuff it's seen in other design docs.
+
+586
+00:50:48,844 --> 00:50:52,624
+But it's just boilerplate. Like, there's no actual meaningful content besides the boiler,
+
+587
+00:50:52,625 --> 00:50:56,024
+um, plate stuff. And that's kind of what's happening here.
+
+588
+00:50:56,025 --> 00:51:00,228
+. Here is, you know, says we should have API documentation.
+
+589
+00:51:00,968 --> 00:51:03,248
+Okay. Well, we're actually building that right now. So,
+
+590
+00:51:03,428 --> 00:51:05,928
+I'm not gonna bother with this. All this,
+
+591
+00:51:05,929 --> 00:51:07,948
+kind of, final validation stuff.
+
+592
+00:51:08,128 --> 00:51:10,588
+It's very hand wavy. And I'm just gonna delete it all.
+
+593
+00:51:11,528 --> 00:51:15,048
+That, that is a pretty typical pattern with these.
+
+594
+00:51:17,628 --> 00:51:18,608
+But this stuff is good.
+
+595
+00:51:25,492 --> 00:51:27,612
+Integration testing, testing infrastructure.
+
+596
+00:51:29,092 --> 00:51:31,892
+This stuff, we're not gonna need it. We're not gonna need this.
+
+597
+00:51:33,112 --> 00:51:37,692
+That's done. Integration
+
+598
+00:51:37,693 --> 00:51:41,952
+test directory. Sure.
+
+599
+00:51:42,972 --> 00:51:43,852
+Let's do integration testing.
+
+600
+00:51:49,136 --> 00:51:51,436
+Okay. That seems reasonable.
+
+601
+00:51:53,016 --> 00:51:55,476
+It seems reasonable.
+
+602
+00:51:56,796 --> 00:51:58,876
+And if there are big problems with the design,
+
+603
+00:51:59,256 --> 00:52:02,296
+it will come out. Pretty quick.
+
+604
+00:52:02,436 --> 00:52:04,876
+Pretty quick. So at this point,
+
+605
+00:52:05,016 --> 00:52:08,296
+I think we are ready to have an agent's,
+
+606
+00:52:08,320 --> 00:52:12,920
+start building that out. So we are going
+
+607
+00:52:12,921 --> 00:52:17,640
+to go in the background mode. And we are going to tell it,
+
+608
+00:52:18,200 --> 00:52:22,160
+oops. Umm,
+
+609
+00:52:22,980 --> 00:52:25,020
+implement. Doc.
+
+610
+00:52:25,820 --> 00:52:29,360
+What did we call this? Just. Come on.
+
+611
+00:52:29,580 --> 00:52:31,100
+Pop, pop, pop, pop. Shh.
+
+612
+00:52:38,064 --> 00:52:43,264
+Umm, completing each sub
+
+613
+00:52:43,265 --> 00:52:48,744
+section of the check list
+
+614
+00:52:48,745 --> 00:52:51,004
+e4. See,
+
+615
+00:52:51,224 --> 00:52:53,064
+two. Next. Next.
+
+616
+00:52:57,838 --> 00:53:00,138
+In sharing. Test.
+
+617
+00:53:01,258 --> 00:53:02,758
+Pass. And.
+
+618
+00:53:18,818 --> 00:53:20,478
+Uhm. Mm. Mm.
+
+619
+00:53:27,342 --> 00:53:28,102
+You complete them.
+
+620
+00:53:36,782 --> 00:53:39,422
+Uhm, and then what do you need to do? You need to, uhm,
+
+621
+00:53:41,022 --> 00:53:43,462
+commit and push one.
+
+622
+00:53:44,576 --> 00:53:49,236
+It's green for
+
+623
+00:53:49,237 --> 00:53:52,696
+every subsection.
+
+624
+00:53:53,776 --> 00:53:56,316
+uhh, uhh, uhh,
+
+625
+00:53:56,936 --> 00:54:00,156
+uhh, uhh, uhh, and we need to push two.
+
+626
+00:54:00,157 --> 00:54:00,316
+Yeah.
+
+627
+00:54:08,640 --> 00:54:09,060
+This.
+
+628
+00:54:25,700 --> 00:54:30,040
+Is there anything else? I feel like I'm forgetting something that it always messes
+
+629
+00:54:30,041 --> 00:54:32,520
+up, but I'm not. It's not.
+
+630
+00:54:32,844 --> 00:54:36,844
+Oh, I know our agent is probably not set up.
+
+631
+00:54:37,724 --> 00:54:42,244
+So we need to go in here. It needs to know
+
+632
+00:54:42,245 --> 00:54:43,084
+about our repo.
+
+633
+00:54:48,564 --> 00:54:50,684
+Umm, umm. Mm-hmm.
+
+634
+00:55:03,698 --> 00:55:06,738
+Oh, I wonder if we actually got the,
+
+635
+00:55:06,739 --> 00:55:09,378
+No, I don't think so.
+
+636
+00:55:12,998 --> 00:55:17,558
+Yeah, I'm not seeing the cursor file that sh-has the agent set up.
+
+637
+00:55:17,358 --> 00:55:17,558
+up.
+
+638
+00:55:42,322 --> 00:55:44,862
+I live dangerously. I-I use the,
+
+639
+00:55:44,896 --> 00:55:47,276
+the beta versions of, umm,
+
+640
+00:55:48,096 --> 00:55:51,036
+cursor, so, like, new stuff comes out all the time.
+
+641
+00:55:51,696 --> 00:55:54,576
+Sometimes it's broken, and this might be one of those times.
+
+642
+00:55:56,716 --> 00:55:59,476
+Uh-huh. Let's see if this will do it.
+
+643
+00:56:04,836 --> 00:56:06,856
+Good. Saw that.
+
+644
+00:56:12,020 --> 00:56:14,080
+Oh, yeah, I gotta come in and push that.
+
+645
+00:56:15,500 --> 00:56:18,240
+Get add.cursor.
+
+646
+00:56:22,320 --> 00:56:26,760
+Uhh, let's see. Oh,
+
+647
+00:56:26,880 --> 00:56:29,360
+it's because it's at the wrong level,
+
+648
+00:56:29,620 --> 00:56:33,904
+probably. No, it isn't. Which,
+
+649
+00:56:33,905 --> 00:56:36,304
+where are we? Oh,
+
+650
+00:56:36,584 --> 00:56:37,724
+I'm at the wrong level.
+
+651
+00:56:45,754 --> 00:56:48,374
+There we go. Status.
+
+652
+00:56:51,614 --> 00:56:54,434
+I think we can, we can add our dock to.
+
+653
+00:56:56,274 --> 00:57:00,348
+That's going to be, super important, actually. Let's add the contract stock.
+
+654
+00:57:07,548 --> 00:57:10,268
+Actually, that's just out of mall. They're all good for now.
+
+655
+00:57:10,568 --> 00:57:15,128
+I mean, we're going to have to revise some of them still. Uhm,
+
+656
+00:57:17,748 --> 00:57:17,748
+okay.
+
+657
+00:57:22,772 --> 00:57:26,272
+Get them in. This is what's called darks.
+
+658
+00:57:26,532 --> 00:57:27,092
+It's Muslim darks.
+
+659
+00:57:49,646 --> 00:57:52,346
+Okay. Now.
+
+660
+00:57:54,666 --> 00:57:57,546
+Potentially outdated environment.
+
+661
+00:57:58,146 --> 00:57:58,706
+That's interesting.
+
+662
+00:58:02,746 --> 00:58:05,666
+Why does it think the environment is outdated?
+
+663
+00:58:17,010 --> 00:58:19,050
+Okay, things are okay. Oh,
+
+664
+00:58:30,320 --> 00:58:32,540
+that's interesting. What happened? Oh, oh,
+
+665
+00:58:32,680 --> 00:58:36,024
+oh, I'll be- That is because, umm,
+
+666
+00:58:36,144 --> 00:58:38,224
+the linter. Hehehe.
+
+667
+00:58:39,104 --> 00:58:42,904
+Okay. Commit.
+
+668
+00:58:42,905 --> 00:58:43,864
+And then we're going to of a
+
+669
+00:59:05,808 --> 00:59:10,408
+Alright. There we
+
+670
+00:59:10,409 --> 00:59:14,728
+go. Repository access required.
+
+671
+00:59:15,408 --> 00:59:20,368
+Set up. Continue. And.
+
+672
+00:59:19,648 --> 00:59:24,182
+And, What do you want to
+
+673
+00:59:24,183 --> 00:59:27,882
+do? Oh, it's all through, okay. Install another address.
+
+674
+00:59:31,902 --> 00:59:34,782
+You know what? The other thing I'm gonna set up is Google Quotuses.
+
+675
+00:59:36,722 --> 00:59:40,742
+Where do you want to come to assist today? Quotuses.
+
+676
+00:59:43,142 --> 00:59:44,962
+GitHub. Install.
+
+677
+00:59:49,616 --> 00:59:54,796
+Marketplace right here. And they're somewhere installed
+
+678
+00:59:54,797 --> 00:59:57,836
+for free. Ooh, I picked the wrong account prior.
+
+679
+00:59:58,176 --> 00:59:59,096
+It doesn't, man.
+
+680
+01:00:07,996 --> 01:00:09,476
+This is me, I think, right?
+
+681
+01:00:15,700 --> 01:00:21,960
+Select repositories. Sweet.
+
+682
+01:00:32,540 --> 01:00:38,084
+Sweet. Ah. Okay. Alright.
+
+683
+01:00:38,644 --> 01:00:42,044
+Where are we? So.
+
+684
+01:00:43,104 --> 01:00:47,544
+Are we pose? There is.
+
+685
+01:00:52,644 --> 01:00:57,504
+Okay, as I read me, I can't
+
+686
+01:00:57,505 --> 01:01:01,568
+be in the, template stuff. Okay. And,
+
+687
+01:01:01,569 --> 01:01:04,208
+I think we had a,
+
+688
+01:01:04,209 --> 01:01:07,728
+we already verified we have a clean bill. That hasn't changed.
+
+689
+01:01:10,428 --> 01:01:13,788
+And, pretty soon we're gonna be seeing some pull requests show up here.
+
+690
+01:01:14,268 --> 01:01:18,028
+Let's see how the umm, let's see how that our little agent is doing.
+
+691
+01:01:19,108 --> 01:01:22,432
+Ooh, background agent not found. That's not good.
+
+692
+01:01:23,092 --> 01:01:24,032
+What's that all about?
+
+693
+01:01:30,212 --> 01:01:31,392
+Oh, there it goes.
+
+694
+01:01:35,452 --> 01:01:37,012
+I just felt the start. All right. All right.
+
+695
+01:01:45,856 --> 01:01:48,876
+Okay. Sweet. It's working on that.
+
+696
+01:01:50,156 --> 01:01:53,076
+While it starts, I'm going to go turn on the air conditioner for a
+
+697
+01:01:53,077 --> 01:01:55,976
+minute. I hope it's not going to make too much noise for you,
+
+698
+01:01:55,996 --> 01:02:00,516
+for background, but, um. It's,
+
+699
+01:02:00,676 --> 01:02:02,936
+I'm afraid I'm going to need a little air for just a bit.
+
+700
+01:02:03,356 --> 01:02:05,576
+Okay. And then, we'll come back and more.
+
+701
+01:02:05,736 --> 01:02:07,656
+We're going to some design docks. Fox. Mm-mm.
+
+702
+01:02:14,560 --> 01:02:17,360
+Okay. Hopefully, that's not too noisy for you. Okay.
+
+703
+01:02:17,820 --> 01:02:20,800
+We're coming up on the end of the,
+
+704
+01:02:20,840 --> 01:02:24,120
+actually we've blown past the end of our first hour,
+
+705
+01:02:24,500 --> 01:02:28,660
+so we've got to get bookin'. I wanted to see a tic-tac-toe game by
+
+706
+01:02:28,661 --> 01:02:32,020
+now, and we're still doing, like, a lot of kind of setup activity.
+
+707
+01:02:33,100 --> 01:02:35,584
+I mean- . Fundamentally,
+
+708
+01:02:35,585 --> 01:02:39,424
+we're laying the groundwork for all that cool stuff that's gonna happen,
+
+709
+01:02:39,425 --> 01:02:41,584
+so. Umm,
+
+710
+01:02:41,664 --> 01:02:45,084
+I'm okay. I'm okay with it, but. Alright.
+
+711
+01:02:45,984 --> 01:02:48,444
+We can put all this aside, not right now.
+
+712
+01:02:52,404 --> 01:02:56,984
+And. Let's start working on some new design
+
+713
+01:02:56,985 --> 01:03:00,248
+docks. So,
+
+714
+01:03:00,908 --> 01:03:02,808
+we want one for this. 2,
+
+715
+01:03:07,708 --> 01:03:09,788
+3, see the line. I'm ready.
+
+716
+01:03:13,268 --> 01:03:15,888
+And we're gonna want one for,
+
+717
+01:03:16,328 --> 01:03:19,448
+umm, a react.
+
+718
+01:03:20,868 --> 01:03:21,888
+2, 3.
+
+719
+01:03:43,472 --> 01:03:46,052
+Fastify server, hmm. Fastify server.
+
+720
+01:03:46,053 --> 01:03:50,176
+Sir. Okay.
+
+721
+01:03:51,456 --> 01:03:55,276
+Time's running short, but let's- let's go ahead and-
+
+722
+01:04:10,770 --> 01:04:11,510
+Umm.
+
+723
+01:04:17,770 --> 01:04:20,010
+Okay, so to fastify,
+
+724
+01:04:20,011 --> 01:04:25,030
+dark, what's gonna be the best way to write that?
+
+725
+01:04:26,930 --> 01:04:31,730
+I think, the best way for
+
+726
+01:04:31,731 --> 01:04:34,984
+it to write that, I think that's gonna be- be best done by a
+
+727
+01:04:34,985 --> 01:04:38,384
+local agent, because I think what I'm gonna have it do,
+
+728
+01:04:39,004 --> 01:04:44,584
+is clone another repo and
+
+729
+01:04:44,585 --> 01:04:49,144
+look at it. And umm.
+
+730
+01:04:53,764 --> 01:04:57,684
+Yeah, that's what I'm gonna do. For that one.
+
+731
+01:05:00,978 --> 01:05:06,198
+I see a lot. Okay.
+
+732
+01:05:07,058 --> 01:05:11,598
+Let's see what kind of shape our contracts documents
+
+733
+01:05:11,599 --> 01:05:14,578
+in, because this is the basis for everything else we're gonna do.
+
+734
+01:05:32,332 --> 01:05:37,012
+And, Boy, building on this before we get the first review is
+
+735
+01:05:37,013 --> 01:05:41,812
+kind of risky. Because I think we're gonna find some API problems
+
+736
+01:05:41,813 --> 01:05:45,292
+in our first review of it.
+
+737
+01:05:50,256 --> 01:05:50,856
+Uhm,
+
+738
+01:06:00,126 --> 01:06:04,986
+but, I think that's
+
+739
+01:06:04,987 --> 01:06:07,406
+the right thing to do. Okay, so, do I wanna use,
+
+740
+01:06:07,626 --> 01:06:09,726
+what do I wanna use? Do I wanna use, like,
+
+741
+01:06:09,886 --> 01:06:12,960
+plain, Oh, cliff. For the CLI,
+
+742
+01:06:12,961 --> 01:06:15,300
+do I wanna build it on the Limsi CLI?
+
+743
+01:06:15,740 --> 01:06:20,100
+If I use the Limsi CLI, the advantage is that I have lots of
+
+744
+01:06:20,101 --> 01:06:24,620
+design docs and review guidelines and other stuff that can help me
+
+745
+01:06:24,621 --> 01:06:27,220
+do it right. Umm,
+
+746
+01:06:27,860 --> 01:06:30,740
+then you, on the other hand, you have to deal with the whole Limsi
+
+747
+01:06:30,741 --> 01:06:33,660
+ecosystem bit. Umm.
+
+748
+01:06:35,824 --> 01:06:40,064
+That might be pretty safe way to go,
+
+749
+01:06:40,065 --> 01:06:44,944
+except for the PMPM repository.
+
+750
+01:06:46,724 --> 01:06:49,284
+Let's just go plain Oak left to start.
+
+751
+01:06:51,904 --> 01:06:56,524
+Okay, so I'm going to do another little
+
+752
+01:06:56,525 --> 01:07:02,408
+recording here. Umm,
+
+753
+01:07:08,508 --> 01:07:10,108
+mz speed. Mm.
+
+754
+01:07:28,432 --> 01:07:32,972
+Text. And here,
+
+755
+01:07:33,592 --> 01:07:37,832
+we're going to, um, use meter.
+
+756
+01:07:38,632 --> 01:07:42,852
+Okay. Okay,
+
+757
+01:07:43,012 --> 01:07:46,652
+this is, these are notes for a design dock that we want.
+
+758
+01:07:46,816 --> 01:07:49,236
+For T-3, or tic-tac-toe,
+
+759
+01:07:49,496 --> 01:07:54,696
+um, CLI. And uh, CLI is going to provide a,
+
+760
+01:07:55,176 --> 01:07:57,336
+um, command-line client,
+
+761
+01:07:57,596 --> 01:08:00,316
+really simple one, for, um,
+
+762
+01:08:01,056 --> 01:08:04,036
+playing tic-tac-toe, um, but it's not gonna have any,
+
+763
+01:08:04,156 --> 01:08:07,136
+like, visual output. Uh,
+
+764
+01:08:07,176 --> 01:08:10,856
+I mean, it will, but it's just going to be,
+
+765
+01:08:10,880 --> 01:08:13,280
+pronting you, um, for your move,
+
+766
+01:08:13,720 --> 01:08:15,780
+and telling you what move it's gonna take.
+
+767
+01:08:16,420 --> 01:08:21,060
+Um, and we're gonna refer to the tic-tac-toe grid with lettered
+
+768
+01:08:21,061 --> 01:08:24,120
+columns, numbered rows, and,
+
+769
+01:08:24,121 --> 01:08:28,760
+um, we're going to use the existing model classes that are in
+
+770
+01:08:28,761 --> 01:08:30,780
+the lib directory. Um,
+
+771
+01:08:31,160 --> 01:08:34,080
+this CLI will be under,
+
+772
+01:08:34,740 --> 01:08:37,664
+um, Okay, okay. Umm, the package's CLI.
+
+773
+01:08:38,904 --> 01:08:41,124
+Um, it's gonna use Oakliff. Um,
+
+774
+01:08:41,384 --> 01:08:44,164
+we're gonna test it with the Oakliff testing tools.
+
+775
+01:08:44,984 --> 01:08:47,904
+And, um, I will,
+
+776
+01:08:48,384 --> 01:08:50,924
+um, append the,
+
+777
+01:08:51,164 --> 01:08:54,184
+um, the read me,
+
+778
+01:08:54,524 --> 01:08:56,944
+actually, I'll probably append the whole source code for the,
+
+779
+01:08:56,945 --> 01:09:00,008
+um, Oakliff testing tools to make sure that we use those properly.
+
+780
+01:09:00,908 --> 01:09:03,868
+Um, what else? Do we need to know about the CLI?
+
+781
+01:09:04,308 --> 01:09:07,988
+So, um, the command is gonna be,
+
+782
+01:09:07,989 --> 01:09:10,768
+Let's just make the command T3.
+
+783
+01:09:12,408 --> 01:09:19,008
+Um, and,
+
+784
+01:09:19,009 --> 01:09:21,528
+Let's,
+
+785
+01:09:21,529 --> 01:09:26,292
+You Let's make a command called,
+
+786
+01:09:26,293 --> 01:09:28,952
+So the topic will be called T3,
+
+787
+01:09:29,432 --> 01:09:31,452
+and the command will be called new.
+
+788
+01:09:32,032 --> 01:09:36,112
+And it's gonna command, Create a new game. And,
+
+789
+01:09:36,113 --> 01:09:39,372
+And then, um, the,
+
+790
+01:09:39,373 --> 01:09:42,992
+Um, It'll prompt for,
+
+791
+01:09:42,993 --> 01:09:46,852
+First it'll take a kind of a random coin flip to see who plays
+
+792
+01:09:46,853 --> 01:09:49,536
+first. S S First, the AI, or the human.
+
+793
+01:09:50,596 --> 01:09:53,556
+And, um, the,
+
+794
+01:09:54,236 --> 01:09:56,616
+um,
+
+795
+01:09:56,617 --> 01:09:59,196
+When it's the human string to play, um,
+
+796
+01:09:59,736 --> 01:10:03,316
+it'll just prompt using enquirer or something like that,
+
+797
+01:10:03,516 --> 01:10:06,836
+uh, to prompt you for your move,
+
+798
+01:10:07,236 --> 01:10:10,616
+which you'll give, like, A1 or B2 or something like that.
+
+799
+01:10:11,200 --> 01:10:13,860
+And then, um, the,
+
+800
+01:10:14,160 --> 01:10:17,100
+the AI will turn. We'll take its turn.
+
+801
+01:10:17,720 --> 01:10:20,760
+And then what will be displayed is a list of,
+
+802
+01:10:20,761 --> 01:10:23,820
+um, each of the turns. Um,
+
+803
+01:10:25,220 --> 01:10:28,100
+you know, Player 1, and then what they turned,
+
+804
+01:10:28,600 --> 01:10:30,640
+Player 2, what they moved,
+
+805
+01:10:30,641 --> 01:10:35,240
+and so on. Um, and then it'll announce the winner at the,
+
+806
+01:10:35,264 --> 01:10:39,844
+end of the game. Um, and that's all
+
+807
+01:10:39,845 --> 01:10:42,604
+we'll do to start with. Um, let's,
+
+808
+01:10:42,624 --> 01:10:46,044
+let's, that'll be Milestone 1. Milestone 2,
+
+809
+01:10:46,504 --> 01:10:49,864
+um, will introduce the concept of a match.
+
+810
+01:10:50,544 --> 01:10:54,224
+So there we need to add the concept of match to the lib directory.
+
+811
+01:10:54,944 --> 01:10:57,264
+And a match is, um,
+
+812
+01:10:57,824 --> 01:11:00,328
+the number of games. And,
+
+813
+01:11:00,329 --> 01:11:03,948
+um, so you can have a 5-game match,
+
+814
+01:11:04,148 --> 01:11:08,168
+for example. Or, you know, play 2 out of 3 for a 3-game match,
+
+815
+01:11:08,368 --> 01:11:10,828
+or 3 out of 5 for a 5-game match,
+
+816
+01:11:10,829 --> 01:11:15,408
+or so on. You, you specify the number of games in the
+
+817
+01:11:15,409 --> 01:11:17,788
+match. And then,
+
+818
+01:11:18,308 --> 01:11:22,928
+um, it'll go ahead and play a match
+
+819
+01:11:22,929 --> 01:11:25,342
+with. And, you know,
+
+820
+01:11:25,402 --> 01:11:28,162
+each turn, each turn, there'll be a,
+
+821
+01:11:28,163 --> 01:11:30,302
+um, a coin flip, um,
+
+822
+01:11:30,542 --> 01:11:34,202
+for who gets to start the first game. The second match,
+
+823
+01:11:34,722 --> 01:11:39,362
+um, or the second game in the match will be started by whoever didn't
+
+824
+01:11:39,363 --> 01:11:43,362
+get to play first, the first time. And it'll just alternate from there.
+
+825
+01:11:44,202 --> 01:11:48,976
+Umm. So,
+
+826
+01:11:49,176 --> 01:11:53,956
+yeah, the checklist in the design document should be organized into those two milestones,
+
+827
+01:11:53,957 --> 01:11:56,416
+umm, for the command line.
+
+828
+01:11:56,876 --> 01:11:57,896
+Alright, that's it.
+
+829
+01:12:02,296 --> 01:12:05,916
+Okay, so where is our,
+
+830
+01:12:06,336 --> 01:12:08,576
+where's our notes? There's our transcript.
+
+831
+01:12:11,520 --> 01:12:14,360
+And so we need to write a new design dark.
+
+832
+01:12:14,361 --> 01:12:14,540
+Mark.
+
+833
+01:13:08,918 --> 01:13:12,518
+And then, let's go get the Oak Lift test.
+
+834
+01:13:16,358 --> 01:13:21,078
+Oak Lift! Uh-uh,
+
+835
+01:13:21,079 --> 01:13:23,678
+uh-uh, uh-uh, uh-uh, uh-uh. We don't want- we want Oak Lift.
+
+836
+01:13:23,712 --> 01:13:26,032
+If we want get-up, it's not what we want.
+
+837
+01:13:26,472 --> 01:13:28,112
+Get-up. Oak Lift.
+
+838
+01:13:34,332 --> 01:13:36,492
+Core. No. Test.
+
+839
+01:13:38,072 --> 01:13:41,712
+And we're just gonna come in here to the source directory,
+
+840
+01:13:42,592 --> 01:13:45,852
+and there's index, and there's a raw.
+
+841
+01:14:16,820 --> 01:14:20,660
+Okay. So we got a new design document coming.
+
+842
+01:14:21,400 --> 01:14:26,160
+How is our agent doing? Is
+
+843
+01:14:26,161 --> 01:14:30,920
+he stuck? Just working on
+
+844
+01:14:30,921 --> 01:14:33,300
+the tests for the player.
+
+845
+01:14:33,560 --> 01:14:35,880
+Let's see if we've got any commits in that poll request yet.
+
+846
+01:14:38,924 --> 01:14:41,004
+He hasn't pushed anything.
+
+847
+01:14:41,904 --> 01:14:45,644
+I'm surprised. Why don't we have any pushes?
+
+848
+01:14:54,594 --> 01:14:55,254
+Can I ask him?
+
+849
+01:15:13,588 --> 01:15:18,448
+Sometimes what happens is that we don't actually-
+
+850
+01:15:18,449 --> 01:15:21,308
+yeah, it actually could be on a branch.
+
+851
+01:15:22,148 --> 01:15:25,482
+Let's look. Nope. Mm hmm.
+
+852
+01:15:49,006 --> 01:15:52,306
+That's highly unusual that it wouldn't,
+
+853
+01:15:52,666 --> 01:15:54,746
+usually it's pretty good about,
+
+854
+01:15:54,747 --> 01:15:58,966
+um, committing at each of those subsection boundaries.
+
+855
+01:15:59,546 --> 01:16:04,086
+So I'm kind of surprised, but especially if we've already got 120 turns already.
+
+856
+01:16:04,986 --> 01:16:05,746
+Um.
+
+857
+01:16:12,160 --> 01:16:14,680
+Alright, how are we doing here? Alright, it doesn't really matter.
+
+858
+01:16:15,800 --> 01:16:17,660
+Just thinking about it. That's pretty Now, gonna a, so is
+
+859
+01:16:54,354 --> 01:16:56,954
+Yeah, this is good. It's good.
+
+860
+01:16:56,794 --> 01:16:56,954
+Good.
+
+861
+01:17:05,038 --> 01:17:07,198
+We're gonna get some push this pretty soon here,
+
+862
+01:17:07,199 --> 01:17:08,678
+and then we can start reviewing it.
+
+863
+01:17:15,558 --> 01:17:18,938
+Yeah, it's funny. I have not seen it struggle with the edit tool,
+
+864
+01:17:18,939 --> 01:17:21,358
+like we are struggling today. So when you,
+
+865
+01:17:22,398 --> 01:17:26,272
+um, put auto here, instead of picking a particular model,
+
+866
+01:17:26,352 --> 01:17:30,212
+it's gonna use what ever model is,
+
+867
+01:17:30,213 --> 01:17:32,772
+kind of has the lowest load on it,
+
+868
+01:17:32,792 --> 01:17:36,592
+you know? Umm, and,
+
+869
+01:17:36,593 --> 01:17:39,352
+it's gonna do it free. That's a nice reason to choose that,
+
+870
+01:17:39,353 --> 01:17:41,792
+and it's gonna be fast. Umm,
+
+871
+01:17:43,012 --> 01:17:45,512
+but you don't always get the best model when you're doing that.
+
+872
+01:17:45,712 --> 01:17:48,392
+So sometimes it's necessary to start off.
+
+873
+01:17:48,416 --> 01:17:50,936
+Over with a better model. Happily,
+
+874
+01:17:50,937 --> 01:17:53,196
+if we stop it and restart it,
+
+875
+01:17:53,436 --> 01:17:55,196
+we'll get, you know, all the same context.
+
+876
+01:18:07,716 --> 01:18:09,496
+Oh, good. Here we go.
+
+877
+01:18:16,300 --> 01:18:17,880
+There's our command structure.
+
+878
+01:18:22,700 --> 01:18:24,900
+Okay, control our clients.
+
+879
+01:18:34,500 --> 01:18:39,084
+Okay, it didn't, it didn't really- Listen to the instructions that
+
+880
+01:18:39,085 --> 01:18:39,644
+we gave it.
+
+881
+01:18:44,704 --> 01:18:45,724
+It's, um.
+
+882
+01:18:50,524 --> 01:18:53,984
+And sometimes, you know, if it gets going, it just can't help itself,
+
+883
+01:18:53,985 --> 01:18:56,644
+you know what I mean? I just, like, hehehehe.
+
+884
+01:18:59,024 --> 01:19:01,688
+The output is produced so- So far, shapes,
+
+885
+01:19:02,308 --> 01:19:06,288
+and it knows, I mean, a lot lots of tic-tac-toe games and so,
+
+886
+01:19:06,428 --> 01:19:08,868
+and just, barrels on.
+
+887
+01:19:12,848 --> 01:19:17,368
+So there's probably lots of duplication with our library classes
+
+888
+01:19:17,369 --> 01:19:22,208
+here. This is a formatter.
+
+889
+01:19:23,788 --> 01:19:26,272
+Okay. So here's what I'm gonna do.
+
+890
+01:19:27,232 --> 01:19:32,252
+Move anything with
+
+891
+01:19:32,253 --> 01:19:37,312
+a display other than the list
+
+892
+01:19:37,313 --> 01:19:41,972
+of turns to milestone
+
+893
+01:19:41,973 --> 01:19:44,372
+three. Focus.
+
+894
+01:19:46,192 --> 01:19:47,592
+First two milestones.
+
+895
+01:19:51,756 --> 01:19:55,196
+On the, uhm,
+
+896
+01:19:56,016 --> 01:19:59,696
+you know, invisible board play.
+
+897
+01:20:02,416 --> 01:20:04,716
+See, has it written checklists yet?
+
+898
+01:20:06,396 --> 01:20:10,856
+Yeah. And do the checklists have good test files and,
+
+899
+01:20:16,270 --> 01:20:16,790
+Okay.
+
+900
+01:20:25,660 --> 01:20:28,460
+Basics CLI. Match system.
+
+901
+01:20:32,400 --> 01:20:36,840
+Invisible board play. Okay. And I'll take
+
+902
+01:20:55,284 --> 01:21:00,624
+How are we doing? Agent. Okay.
+
+903
+01:21:00,064 --> 01:21:02,708
+Okay. Test from game engine, did it push anything?
+
+904
+01:21:03,728 --> 01:21:06,048
+Yes, test. We're up to 152 passing tests.
+
+905
+01:21:06,848 --> 01:21:10,628
+Let's see if get up the grease. First of all,
+
+906
+01:21:10,848 --> 01:21:13,548
+do we have any branches? Yes,
+
+907
+01:21:13,588 --> 01:21:18,408
+we do. There it is. And
+
+908
+01:21:18,409 --> 01:21:21,028
+do we have any pull requests? No. So let's open a PR.
+
+909
+01:21:49,166 --> 01:21:52,626
+Great. So, that'll give us some feedback on the test,
+
+910
+01:21:53,326 --> 01:21:57,066
+and we will also get Jim and I starting a good review.
+
+911
+01:21:58,706 --> 01:22:01,286
+So, how do I feel about how we're doing?
+
+912
+01:22:02,026 --> 01:22:06,506
+Whoa, man, the time is flying. Um,
+
+913
+01:22:07,426 --> 01:22:12,066
+so I'm not feeling great about that. I
+
+914
+01:22:12,067 --> 01:22:17,080
+thought we were- gonna get to our first umm,
+
+915
+01:22:17,560 --> 01:22:19,580
+game much faster. And we're producing,
+
+916
+01:22:19,820 --> 01:22:22,040
+like, way more code than we needed to, right?
+
+917
+01:22:22,380 --> 01:22:26,120
+Like, if I hadn't taken this big design document approach to it,
+
+918
+01:22:26,440 --> 01:22:29,400
+but instead I had taken the approach of,
+
+919
+01:22:29,800 --> 01:22:32,660
+you know, more targeted directions,
+
+920
+01:22:33,340 --> 01:22:37,544
+shorter directions and so on, we would've gotten a shorter- We were files,
+
+921
+01:22:38,164 --> 01:22:40,684
+we would've gotten a result faster. That would've,
+
+922
+01:22:40,984 --> 01:22:43,364
+you know, de-risked the project a little more.
+
+923
+01:22:44,204 --> 01:22:47,004
+So, umm, nah,
+
+924
+01:22:47,124 --> 01:22:50,544
+not feeling great about, about, umm,
+
+925
+01:22:51,044 --> 01:22:53,984
+about that. But, uhh,
+
+926
+01:22:53,985 --> 01:22:58,724
+uhh, the hope
+
+927
+01:22:58,725 --> 01:23:02,328
+is that if we've got a solid mod- a little make doing the other
+
+928
+01:23:02,329 --> 01:23:05,028
+stuff a little easier. Okay,
+
+929
+01:23:05,029 --> 01:23:08,668
+so what? So,
+
+930
+01:23:08,788 --> 01:23:10,888
+yeah, what's up, Bill's that way. What are these,
+
+931
+01:23:11,268 --> 01:23:14,548
+Jacks? What are these feeling,
+
+932
+01:23:14,808 --> 01:23:19,668
+Jacks? These
+
+933
+01:23:19,669 --> 01:23:23,488
+code coverage tests.
+
+934
+01:23:24,028 --> 01:23:24,988
+What happened with our tests? Yes.
+
+935
+01:23:51,826 --> 01:23:52,366
+Hm.
+
+936
+01:24:13,440 --> 01:24:15,720
+How do we get code coverage, but I'm not.
+
+937
+01:24:18,240 --> 01:24:20,600
+This. Interesting.
+
+938
+01:24:23,280 --> 01:24:26,540
+Okay. We're still working on this.
+
+939
+01:24:27,040 --> 01:24:29,500
+Oh no, this is, this is happening on the background agent,
+
+940
+01:24:29,501 --> 01:24:32,440
+so I don't think I've got anything going on here,
+
+941
+01:24:32,480 --> 01:24:35,840
+so let's close that. I think we're good here.
+
+942
+01:24:36,260 --> 01:24:39,374
+Let's close that. Let's close that.
+
+943
+01:24:42,114 --> 01:24:45,994
+And so I think I'm okay to switch branches right now.
+
+944
+01:24:47,754 --> 01:24:50,894
+I guess I can open up the terminal.
+
+945
+01:24:51,574 --> 01:24:52,494
+Actually, I'll just do that here. here.
+
+946
+01:25:07,308 --> 01:25:09,428
+Okay, the last thing we were working on is ours.
+
+947
+01:25:10,168 --> 01:25:11,988
+Yeah, our CLI guy here.
+
+948
+01:25:20,148 --> 01:25:23,528
+Yes, and we got our visual display,
+
+949
+01:25:23,708 --> 01:25:25,812
+milestone three, that's very. very good.
+
+950
+01:25:32,032 --> 01:25:36,732
+But, I'm not sure if the checklist section in
+
+951
+01:25:36,733 --> 01:25:38,832
+four is matching the milestones.
+
+952
+01:25:41,772 --> 01:25:46,472
+Let's make a background agent deal with that problem so we can
+
+953
+01:25:46,473 --> 01:25:49,292
+go ahead and switch workspaces. Ours.
+
+954
+01:25:49,696 --> 01:25:52,316
+Switch branches and start checking on the other one.
+
+955
+01:25:53,296 --> 01:25:56,496
+Umm. So,
+
+956
+01:25:57,476 --> 01:26:02,656
+what do we want you to do? We want you to make
+
+957
+01:26:02,657 --> 01:26:07,596
+sure that the
+
+958
+01:26:07,597 --> 01:26:11,676
+checklist,
+
+959
+01:26:14,260 --> 01:26:19,300
+in section 4 are aligned,
+
+960
+01:26:20,620 --> 01:26:27,260
+the milestones in section 5.
+
+961
+01:26:30,860 --> 01:26:33,760
+Combine the sections.
+
+962
+01:26:41,714 --> 01:26:44,274
+Over for the animals. Umm,
+
+963
+01:26:44,454 --> 01:26:45,094
+section 5.
+
+964
+01:27:47,792 --> 01:27:49,992
+Now, we can safely,
+
+965
+01:27:50,096 --> 01:27:54,656
+,search branches. Okay.
+
+966
+01:27:58,756 --> 01:27:59,036
+Orange.
+
+967
+01:28:18,900 --> 01:28:20,000
+Okay. . . . .
+
+968
+01:28:43,664 --> 01:28:46,364
+Uhh, we got lots of type errors.
+
+969
+01:28:46,944 --> 01:28:50,464
+That's not nice. Not cool.
+
+970
+01:28:51,524 --> 01:28:54,084
+So, the agent has not been obedient.
+
+971
+01:28:54,464 --> 01:28:58,904
+It's not checking its work. Usually it is much better by doing it than
+
+972
+01:28:58,905 --> 01:29:02,184
+this. But we should just just .
+
+973
+01:29:02,185 --> 01:29:04,848
+. It's affected when we didn't see those pushes showing up.
+
+974
+01:29:06,688 --> 01:29:09,488
+But, it's surprising to me .
+
+975
+01:29:09,489 --> 01:29:12,148
+. . that we got .
+
+976
+01:29:12,149 --> 01:29:14,788
+. . that we got that far. Of course,
+
+977
+01:29:14,948 --> 01:29:17,048
+that could have shown up in a more recent commit.
+
+978
+01:29:17,488 --> 01:29:20,368
+Let's see how many commits we've got in the .
+
+979
+01:29:20,369 --> 01:29:24,408
+. . PR now. Yeah.
+
+980
+01:29:23,988 --> 01:29:27,202
+Yeah. It's .
+
+981
+01:29:27,203 --> 01:29:30,662
+. .
+
+982
+01:29:30,663 --> 01:29:33,222
+it's um . .
+
+983
+01:29:33,223 --> 01:29:35,262
+.
+
+984
+01:29:35,263 --> 01:29:38,002
+these ones have been relatively okay,
+
+985
+01:29:38,003 --> 01:29:41,702
+I think. So .
+
+986
+01:29:41,703 --> 01:29:43,782
+. . let's go back . .
+
+987
+01:29:43,783 --> 01:29:48,742
+. to chat here and say .
+
+988
+01:29:48,743 --> 01:29:48,742
+.
+
+989
+01:30:01,516 --> 01:30:04,016
+how he is working on type errors. Isn't it exciting?
+
+990
+01:30:04,017 --> 01:30:04,696
+The window in the right hand. And, slide
+
+991
+01:30:31,890 --> 01:30:34,370
+I'll see what it's in the middle because I'm going to interrupt it here.
+
+992
+01:30:35,590 --> 01:30:40,694
+It's about ready to run tests. Yes. So
+
+993
+01:30:40,695 --> 01:30:42,654
+this is a good time to interrupt.
+
+994
+01:30:49,094 --> 01:30:50,014
+Okay.
+
+995
+01:30:54,454 --> 01:30:56,634
+So, where are we?
+
+996
+01:31:00,034 --> 01:31:02,374
+We don't understand what- What?
+
+997
+01:31:02,528 --> 01:31:07,328
+What's going on with these ta- favorite tests? And that is of- as
+
+998
+01:31:07,329 --> 01:31:12,068
+of what commit? Do we have the same thing happening here?
+
+999
+01:31:15,108 --> 01:31:17,268
+Oh, oh, let's look at the actions.
+
+1000
+01:31:28,402 --> 01:31:32,622
+Oh, it opened a new pull request. What's that all about?
+
+1001
+01:31:33,002 --> 01:31:35,622
+I'm gonna check this for the most. Oh, well, that's the thing we just
+
+1002
+01:31:35,623 --> 01:31:41,602
+did. It just did it on a branch. And
+
+1003
+01:31:41,603 --> 01:31:44,022
+so we can actually,
+
+1004
+01:31:48,082 --> 01:31:50,282
+We can just- we can just merge that sucker.
+
+1005
+01:31:50,706 --> 01:31:57,126
+Okay, umm.
+
+1006
+01:32:01,026 --> 01:32:05,106
+This is the umm, this is just our design talk.
+
+1007
+01:32:05,526 --> 01:32:07,746
+And we just don't really want it on this branch. So,
+
+1008
+01:32:08,146 --> 01:32:11,706
+we can just merge it. Um,
+
+1009
+01:32:12,006 --> 01:32:13,186
+cursor just does that by default.
+
+1010
+01:32:30,290 --> 01:32:35,410
+Okay. Let's make sure we don't have any new branches showing
+
+1011
+01:32:35,411 --> 01:32:37,210
+up. What we're already expecting.
+
+1012
+01:32:46,034 --> 01:32:51,534
+Umm. Okay. So.
+
+1013
+01:32:56,474 --> 01:33:00,994
+We have eight commits on here at this
+
+1014
+01:33:00,995 --> 01:33:01,274
+point.
+
+1015
+01:33:14,188 --> 01:33:18,168
+And this one was green as far as the test go.
+
+1016
+01:33:18,169 --> 01:33:18,388
+Oh.
+
+1017
+01:33:31,282 --> 01:33:33,422
+I see how, I see how it is right now.
+
+1018
+01:33:33,423 --> 01:33:33,582
+You
+
+1019
+01:33:50,976 --> 01:33:53,016
+Yeah, still got a lot broken.
+
+1020
+01:33:54,976 --> 01:34:00,196
+Bomber here is if I start
+
+1021
+01:34:00,197 --> 01:34:04,956
+fixing these. I'm gonna have an emerge complex.
+
+1022
+01:34:06,416 --> 01:34:11,036
+I am very eager to
+
+1023
+01:34:11,037 --> 01:34:14,196
+get to done on this first section.
+
+1024
+01:35:52,076 --> 01:35:54,196
+Alright, I'm going to start investigating anyway.
+
+1025
+01:35:55,016 --> 01:35:59,356
+I want to know what these testifiers make.
+
+1026
+01:36:01,276 --> 01:36:02,776
+Oh, these are type errors.
+
+1027
+01:36:10,296 --> 01:36:15,336
+This is not. But I think what's happening here is that the-
+
+1028
+01:36:15,360 --> 01:36:20,420
+It's stopping because the first build
+
+1029
+01:36:20,421 --> 01:36:23,000
+in the matrix fails. I think that's what it's doing.
+
+1030
+01:36:23,300 --> 01:36:24,880
+It's forcing an early quit.
+
+1031
+01:36:31,760 --> 01:36:33,040
+Umm, okay.
+
+1032
+01:36:39,424 --> 01:36:42,004
+So let's go ahead and create a design dock for the,
+
+1033
+01:36:42,104 --> 01:36:46,724
+umm, for the react components.
+
+1034
+01:36:46,725 --> 01:36:47,444
+And we'll see you in
+
+1035
+01:37:48,112 --> 01:37:49,252
+Do we commit and push?
+
+1036
+01:37:55,216 --> 01:37:59,676
+Oh, he's checking on it to make sure. So we should be seeing a
+
+1037
+01:37:59,677 --> 01:38:00,676
+new build.
+
+1038
+01:38:11,896 --> 01:38:12,856
+What is this one?
+
+1039
+01:38:26,930 --> 01:38:29,010
+Oh, it's the main, it's just the main branch.
+
+1040
+01:38:29,011 --> 01:38:30,890
+It's the merge on the main branch, right? . . .
+
+1041
+01:38:59,084 --> 01:39:01,164
+Okay, great. We're done.
+
+1042
+01:39:02,484 --> 01:39:07,908
+With as much as they're- gonna do there. Let's get a poll.
+
+1043
+01:39:09,368 --> 01:39:10,468
+Let's see what we have to fix.
+
+1044
+01:39:21,608 --> 01:39:22,848
+There's the fine but never used. used.
+
+1045
+01:39:59,276 --> 01:40:01,696
+How are we doing? We got a bunch of new typers.
+
+1046
+01:40:01,697 --> 01:40:02,176
+Cheers!
+
+1047
+01:40:29,870 --> 01:40:33,330
+Okay. Umm,
+
+1048
+01:40:33,970 --> 01:40:38,610
+so, I think our CLI dock should be in pretty good shape now.
+
+1049
+01:40:38,970 --> 01:40:41,224
+Let's see if we get them out. Also in the structure that way we
+
+1050
+01:40:41,225 --> 01:40:41,604
+want it.
+
+1051
+01:40:54,294 --> 01:40:56,634
+This is not looking like what I'm expecting.
+
+1052
+01:41:03,434 --> 01:41:06,348
+Oh, it's- Because I'm on the wrong branch that got merged to Maine.
+
+1053
+01:41:07,148 --> 01:41:09,628
+Mm, mm,
+
+1054
+01:41:10,448 --> 01:41:12,808
+mm, mm, mm, mm. So let's just go look at it.
+
+1055
+01:41:14,428 --> 01:41:16,608
+And Maine. Let me see how we're doing.
+
+1056
+01:41:17,448 --> 01:41:22,308
+Mm, mm. See we're on the Maine branch.
+
+1057
+01:41:26,408 --> 01:41:29,212
+And we're- Where is it?
+
+1058
+01:41:30,132 --> 01:41:32,232
+I'm pretty sure we merged it.
+
+1059
+01:41:33,972 --> 01:41:38,572
+So, what happened? Where did
+
+1060
+01:41:38,573 --> 01:41:39,272
+we merge it to? Thank you.
+
+1061
+01:41:52,256 --> 01:41:54,296
+Don't me. Not good.
+
+1062
+01:41:56,536 --> 01:41:57,776
+Not what we wanted.
+
+1063
+01:42:02,756 --> 01:42:05,336
+Not what we wanted. That's too bad.
+
+1064
+01:42:05,756 --> 01:42:09,576
+Oh, and we're modifying the wrong document. How did that happen?
+
+1065
+01:42:11,076 --> 01:42:16,296
+I must be trying to move too fast. That,
+
+1066
+01:42:16,320 --> 01:42:17,120
+Looks no good. Good.
+
+1067
+01:43:13,428 --> 01:43:19,488
+Alright, we're green. So do we get a green build on
+
+1068
+01:43:19,489 --> 01:43:23,228
+this branch? No,
+
+1069
+01:43:23,288 --> 01:43:24,568
+cause we haven't pushed this yet.
+
+1070
+01:43:28,852 --> 01:43:31,572
+Umm, hmmm.
+
+1071
+01:43:34,192 --> 01:43:36,052
+Stay in this. Yes.
+
+1072
+01:44:00,976 --> 01:44:03,196
+Oh, hopefully we're gonna get a green build.
+
+1073
+01:44:11,986 --> 01:44:14,806
+Okay, so I'm looking at the time here, and I would say,
+
+1074
+01:44:15,226 --> 01:44:19,340
+no. I'm not happy with how things are going here.
+
+1075
+01:44:19,540 --> 01:44:24,600
+I was hoping I would be done with this at
+
+1076
+01:44:24,601 --> 01:44:27,120
+hour one, and I'm almost done with hour two,
+
+1077
+01:44:27,380 --> 01:44:31,800
+so. We're not gonna get nearly as far as I had hoped to with
+
+1078
+01:44:31,801 --> 01:44:34,400
+this project, but there.
+
+1079
+01:44:35,200 --> 01:44:36,540
+Welcome to software. Okay.
+
+1080
+01:44:46,574 --> 01:44:50,694
+While I'm waiting for that, let's fix this.
+
+1081
+01:44:50,695 --> 01:44:53,214
+Yes.
+
+1082
+01:45:06,478 --> 01:45:08,498
+I'm just gonna be a lot more specific this time.
+
+1083
+01:45:08,499 --> 01:45:08,598
+.
+
+1084
+01:46:52,144 --> 01:46:54,024
+So, we should have a look.
+
+1085
+01:49:31,342 --> 01:49:34,282
+Ah, shoot. She didn't do that.
+
+1086
+01:49:34,283 --> 01:49:34,402
+Alright.
+
+1087
+01:51:05,998 --> 01:51:10,518
+Okay. All
+
+1088
+01:51:10,519 --> 01:51:13,198
+right, let's go check on our build. Yay!
+
+1089
+01:51:13,398 --> 01:51:15,638
+Oh, green! Whoo! Okay,
+
+1090
+01:51:15,938 --> 01:51:18,678
+finally! So,
+
+1091
+01:51:18,698 --> 01:51:23,438
+let's look at the PR. That took way too long.
+
+1092
+01:51:23,958 --> 01:51:26,198
+We took way too big a crank there,
+
+1093
+01:51:26,298 --> 01:51:28,318
+you know what I mean? Like, you want fast,
+
+1094
+01:51:28,319 --> 01:51:32,472
+tight cycles, not- like, an hour and a half to get to your first
+
+1095
+01:51:32,473 --> 01:51:36,112
+commit. That's dunk. Umm.
+
+1096
+01:51:41,172 --> 01:51:43,912
+Alright, let's work on review comments.
+
+1097
+01:51:43,913 --> 01:51:44,472
+And that's the difference.
+
+1098
+01:51:53,856 --> 01:52:00,756
+Mm good.
+
+1099
+01:52:00,836 --> 01:52:03,356
+Good, good, good, good,
+
+1100
+01:52:03,357 --> 01:52:05,556
+good, good, good. Let me,
+
+1101
+01:52:05,596 --> 01:52:08,916
+let me see what else is here. Umm,
+
+1102
+01:52:14,716 --> 01:52:17,176
+and I've served a amount of code for tic-tac-toe.
+
+1103
+01:52:17,920 --> 01:52:18,640
+Absurd!
+
+1104
+01:52:23,220 --> 01:52:27,000
+And it's not good to have so much code for tic-tac-toe.
+
+1105
+01:52:30,900 --> 01:52:33,420
+Alright, let's umm.
+
+1106
+01:52:36,420 --> 01:52:38,760
+What do we want to do next? We want to,
+
+1107
+01:52:39,400 --> 01:52:41,760
+we want to fix the review.
+
+1108
+01:52:41,761 --> 01:52:45,504
+You comments and get the darn thing merged.
+
+1109
+01:52:48,324 --> 01:52:49,144
+So.
+
+1110
+01:52:53,644 --> 01:52:55,284
+Let's see here. You
+
+1111
+01:55:20,878 --> 01:55:23,618
+How are we now organized? Are C.L.A.
+
+1112
+01:55:24,138 --> 01:55:24,638
+now organized?
+
+1113
+01:55:54,496 --> 01:55:58,456
+I mean, are we really organized the right way?
+
+1114
+01:56:52,304 --> 01:56:56,764
+The thing that I'm finding very frustrating about this exercise right now is I'm
+
+1115
+01:56:56,765 --> 01:56:59,964
+just writing docs and that you're not seeing me in the code,
+
+1116
+01:56:59,965 --> 01:57:03,044
+and this is not what my life is ordinarily like.
+
+1117
+01:57:04,064 --> 01:57:06,224
+I mean, I use these docs,
+
+1118
+01:57:06,324 --> 01:57:10,668
+but I- It's been a lot more time in the code, and I'm not
+
+1119
+01:57:10,669 --> 01:57:13,528
+demonstrating that in this exercise,
+
+1120
+01:57:13,568 --> 01:57:18,048
+and I'm not doing that because I'm trying to get stuff done fast,
+
+1121
+01:57:18,708 --> 01:57:23,568
+and I'm not actually moving that very- very
+
+1122
+01:57:23,569 --> 01:57:25,648
+fast. I mean, I'm creating lots of classes and tests,
+
+1123
+01:57:25,748 --> 01:57:30,088
+but I'm not showing results at the speed I would like.
+
+1124
+01:57:30,752 --> 01:57:34,352
+And I'm not, uhm,
+
+1125
+01:57:34,353 --> 01:57:39,092
+I'm not showing coding skills
+
+1126
+01:57:39,093 --> 01:57:41,192
+or kind of understanding of code,
+
+1127
+01:57:41,193 --> 01:57:43,932
+and that's frustrating to me.
+
+1128
+01:57:45,172 --> 01:57:46,392
+That doesn't feel good.
+
+1129
+01:57:51,452 --> 01:57:55,096
+Okay, I think this checklist is ready. I'm gonna- a Or I'll run it
+
+1130
+01:57:55,097 --> 01:57:58,456
+through one more test that I sometimes often do,
+
+1131
+01:57:58,936 --> 01:58:01,776
+and I use generalized specially for this.
+
+1132
+01:58:04,456 --> 01:58:06,416
+And, let's say,
+
+1133
+01:58:27,860 --> 01:58:30,140
+actually, O3 is especially good at this.
+
+1134
+01:58:30,280 --> 01:58:31,140
+I'm gonna ask. It's good. Okay.
+
+1135
+01:58:51,084 --> 01:58:51,864
+Okay.
+
+1136
+01:58:57,644 --> 01:59:00,484
+Alright, we got a design document for React,
+
+1137
+01:59:00,884 --> 01:59:01,684
+for the React stuff.
+
+1138
+01:59:08,978 --> 01:59:11,178
+And we probably have some review.
+
+1139
+01:59:21,198 --> 01:59:24,138
+Agreeeee. Agreeeee.
+
+1140
+01:59:45,132 --> 01:59:51,232
+Ooh, I don't like this. I don't
+
+1141
+01:59:51,233 --> 01:59:54,552
+like incomplete before. What is incomplete here?
+
+1142
+01:59:53,952 --> 01:59:55,112
+here. 8
+
+1143
+02:00:17,746 --> 02:00:22,040
+Let's start fixing. SINGING. The first issues,
+
+1144
+02:00:22,041 --> 02:00:25,100
+and then I want to dig deeper into this whole placeholder thing.
+
+1145
+02:00:25,101 --> 02:00:30,220
+That makes me uncomfortable. Umm,
+
+1146
+02:00:30,760 --> 02:00:35,320
+so. I'm gonna just tell
+
+1147
+02:00:35,321 --> 02:00:38,780
+it to work on sections one through five.
+
+1148
+02:01:05,104 --> 02:01:07,144
+Please address the review guide in the section.
+
+1149
+02:01:07,145 --> 02:01:08,368
+I'm not sure. Those ones are fine. Bye.
+
+1150
+02:02:21,330 --> 02:02:23,990
+What's the name of the branch again? And we'll see you
+
+1151
+02:02:53,804 --> 02:02:55,964
+Oh, oh, oh, oh. I don't want to do that here. I want to
+
+1152
+02:02:55,965 --> 02:03:00,344
+do that as a background date. Okay.
+
+1153
+02:03:06,704 --> 02:03:09,008
+Okay, we got- Yeah. Right there. A lot of tabs open here.
+
+1154
+02:03:09,408 --> 02:03:13,948
+Let's see where we are. We
+
+1155
+02:03:13,949 --> 02:03:18,348
+don't need that anymore.
+
+1156
+02:03:21,208 --> 02:03:24,228
+We are done with our design dock,
+
+1157
+02:03:24,388 --> 02:03:30,328
+I think. Oh yeah, we're now just evaluating the
+
+1158
+02:03:30,329 --> 02:03:30,648
+order.
+
+1159
+02:03:41,812 --> 02:03:44,912
+Oh, hot, good, good, good. We got the analysis. If you adopt that sequence
+
+1160
+02:03:44,913 --> 02:03:47,152
+and each milestone, each item superrequisites.
+
+1161
+02:03:48,252 --> 02:03:52,912
+Yeah. O1 is super good at that particular problem of
+
+1162
+02:03:52,913 --> 02:03:56,176
+making sure things are done in the right order. It doesn't always- get everyone
+
+1163
+02:03:56,177 --> 02:03:58,376
+right, but it typically does pretty good.
+
+1164
+02:03:59,816 --> 02:04:00,656
+So, You
+
+1165
+02:04:36,140 --> 02:04:39,920
+I usually work on things that are way more complicated than tic-tac-toe.
+
+1166
+02:04:40,080 --> 02:04:43,560
+Of course so, does everybody? Umm, so that's probably why,
+
+1167
+02:04:44,754 --> 02:04:49,594
+Like, this, structure is working really well for me ordinarily,
+
+1168
+02:04:49,595 --> 02:04:52,294
+but working poorly for me with tic-tac-toe,
+
+1169
+02:04:52,295 --> 02:04:55,174
+I'm guessing. Okay.
+
+1170
+02:04:56,814 --> 02:05:00,014
+Umm. Let's see,
+
+1171
+02:05:00,114 --> 02:05:02,254
+what am I looking at here? Oh,
+
+1172
+02:05:02,454 --> 02:05:07,174
+I'm going to do it, looking at review feedback. So
+
+1173
+02:05:07,175 --> 02:05:10,468
+we're getting review- review. Review feedback in, so I need to spend some time
+
+1174
+02:05:10,469 --> 02:05:13,628
+looking at React components. Uhh,
+
+1175
+02:05:14,128 --> 02:05:17,348
+alright. Game board,
+
+1176
+02:05:18,268 --> 02:05:20,668
+game cell, game status, game controls,
+
+1177
+02:05:22,508 --> 02:05:25,128
+move history, game analysis,
+
+1178
+02:05:25,628 --> 02:05:27,988
+player info, game sex. Ooh,
+
+1179
+02:05:28,028 --> 02:05:33,752
+this is a lot of components. Reduced
+
+1180
+02:05:33,753 --> 02:05:38,212
+to the most.
+
+1181
+02:05:38,213 --> 02:05:38,412
+Just.
+
+1182
+02:06:09,836 --> 02:06:12,736
+Well, in the time remaining, there's no way,
+
+1183
+02:06:12,737 --> 02:06:17,296
+even if we copy a whole another repo that we
+
+1184
+02:06:17,297 --> 02:06:22,250
+have. Are we gonna get- the
+
+1185
+02:06:22,251 --> 02:06:24,550
+rest APIs, you know,
+
+1186
+02:06:24,670 --> 02:06:27,450
+and I don't think. Umm,
+
+1187
+02:06:28,370 --> 02:06:30,670
+let's take a look.
+
+1188
+02:06:31,270 --> 02:06:35,950
+So my son and I started working on- we've been working
+
+1189
+02:06:35,951 --> 02:06:40,730
+on little games all summer. And we
+
+1190
+02:06:40,731 --> 02:06:46,204
+have one for- so here that,
+
+1191
+02:06:59,294 --> 02:06:59,694
+uhh.
+
+1192
+02:07:06,894 --> 02:07:11,448
+That's the best way of doing that. See ya.
+
+1193
+02:09:09,938 --> 02:09:13,638
+Uhh, I'm happy here.
+
+1194
+02:09:13,639 --> 02:09:14,098
+There we go.
+
+1195
+02:10:07,246 --> 02:10:08,546
+What is going on? Mm.
+
+1196
+02:10:39,890 --> 02:10:42,370
+Uhh, duh. You
+
+1197
+02:16:33,870 --> 02:16:37,930
+Okay, now what I want you to do is- is.
+
+1198
+02:18:09,326 --> 02:18:09,926
+Alright.
+
+1199
+02:18:16,466 --> 02:18:18,866
+How are we doing on review feedback here?
+
+1200
+02:18:36,850 --> 02:18:38,370
+I think it's just done, I think. Thank you.
+
+1201
+02:18:46,414 --> 02:18:49,974
+Great. So we should have some new commits,
+
+1202
+02:19:00,554 --> 02:19:05,834
+and we've got a build going on now. See
+
+1203
+02:19:05,835 --> 02:19:08,474
+what we're doing here. Ahhh.
+
+1204
+02:19:10,208 --> 02:19:10,728
+Great. All right.
+
+1205
+02:19:57,042 --> 02:20:00,476
+Okay. Thank you. Then the other problem we had was that there was,
+
+1206
+02:20:00,636 --> 02:20:03,916
+like, un-implemented methods or something like that.
+
+1207
+02:20:04,356 --> 02:20:07,516
+So what was that all about? So let's see if we can figure that
+
+1208
+02:20:07,517 --> 02:20:10,316
+out. And we gotta get that merged.
+
+1209
+02:20:10,616 --> 02:20:15,376
+I mean, that thing, this was supposed to be our very first thing,
+
+1210
+02:20:15,416 --> 02:20:18,796
+and it's dragging on and on. Umm.
+
+1211
+02:20:30,420 --> 02:20:31,580
+It wasn't right here.
+
+1212
+02:22:25,620 --> 02:22:30,220
+Okay, interesting. Okay,
+
+1213
+02:22:38,390 --> 02:22:42,610
+so. Let's merge it.
+
+1214
+02:22:53,554 --> 02:22:55,934
+Now it starts in duplicate stuff.
+
+1215
+02:22:55,935 --> 02:22:56,034
+up.
+
+1216
+02:23:20,558 --> 02:23:24,498
+Okay. So those just all have to do with the AI and how good
+
+1217
+02:23:24,499 --> 02:23:27,578
+the AI is, but it won't break. So I'm gonna go ahead and merge
+
+1218
+02:23:27,579 --> 02:23:27,798
+it.
+
+1219
+02:23:34,398 --> 02:23:37,972
+And, Umm, we,
+
+1220
+02:23:38,152 --> 02:23:40,672
+so we can build our CLI on top of it.
+
+1221
+02:23:40,852 --> 02:23:45,372
+I don't think we've actually started the agent to implement the
+
+1222
+02:23:45,373 --> 02:23:49,452
+CLI. We were,
+
+1223
+02:23:49,472 --> 02:23:52,972
+I think, reorganizing the structure of the checklist.
+
+1224
+02:24:07,816 --> 02:24:10,796
+Uhh, okay, we're ready.
+
+1225
+02:24:11,196 --> 02:24:15,796
+We are ready. So let's
+
+1226
+02:24:15,797 --> 02:24:17,396
+have a background agent. minute.
+
+1227
+02:24:42,800 --> 02:24:45,060
+You know, the one thing I'm wondering about. out.
+
+1228
+02:24:48,084 --> 02:24:50,604
+Oh, first of all, we gotta commit that. Umm,
+
+1229
+02:24:51,024 --> 02:24:56,024
+and then I'm wondering if it actually got good instruction about
+
+1230
+02:24:56,025 --> 02:24:56,864
+how to write the tests.
+
+1231
+02:25:05,484 --> 02:25:06,304
+This is correct.
+
+1232
+02:25:47,022 --> 02:25:49,502
+I'm not seeing the test classes.
+
+1233
+02:25:50,902 --> 02:25:53,202
+I'm not seeing that they were done correctly.
+
+1234
+02:26:02,106 --> 02:26:02,666
+And
+
+1235
+02:26:16,616 --> 02:26:18,636
+they're just creating some, ehm,
+
+1236
+02:26:19,216 --> 02:26:20,696
+seems kind of silly, okay. Okay.
+
+1237
+02:26:29,740 --> 02:26:35,740
+I think we're ready. I think that's good. Please
+
+1238
+02:26:35,741 --> 02:26:38,860
+implement. Umm.
+
+1239
+02:26:38,861 --> 02:26:39,060
+Mm.
+
+1240
+02:29:30,418 --> 02:29:32,898
+Alright. So,
+
+1241
+02:29:33,238 --> 02:29:37,212
+we've hit 30 minutes. So So We should be polishing now,
+
+1242
+02:29:37,213 --> 02:29:39,472
+but we still haven't seen a playable game.
+
+1243
+02:29:39,992 --> 02:29:43,912
+So, from a kind of risk management standpoint,
+
+1244
+02:29:44,392 --> 02:29:46,712
+I'm not happy with that at all.
+
+1245
+02:29:47,452 --> 02:29:50,712
+Umm. We've got lots of code,
+
+1246
+02:29:50,892 --> 02:29:53,372
+it's got lots of unit tests, but we've never even seen it run yet.
+
+1247
+02:29:53,712 --> 02:29:58,172
+So, shouldn't have, shouldn't have happened that way.
+
+1248
+02:29:58,992 --> 02:29:59,472
+Umm.
+
+1249
+02:30:07,206 --> 02:30:10,026
+We're not gonna get to react or the Fastify app.
+
+1250
+02:30:11,646 --> 02:30:15,166
+Even though we've kind of got some start on that.
+
+1251
+02:30:15,946 --> 02:30:20,546
+The main thing is gonna be to get through to getting
+
+1252
+02:30:20,547 --> 02:30:23,286
+this command stuff done.
+
+1253
+02:31:22,288 --> 02:31:27,348
+Oh, oh, oh. I just realized we
+
+1254
+02:31:27,349 --> 02:31:29,708
+gave it a checklist without committing it.
+
+1255
+02:31:29,788 --> 02:31:34,408
+It's working on the wrong version of it. I am
+
+1256
+02:31:34,409 --> 02:31:35,568
+glad we caught that.
+
+1257
+02:32:09,456 --> 02:32:10,496
+Oh, yeah, we're in.
+
+1258
+02:32:16,076 --> 02:32:16,396
+Okay.
+
+1259
+02:32:55,124 --> 02:32:55,824
+Hmmm.
+
+1260
+02:34:08,336 --> 02:34:08,916
+Alright,
+
+1261
+02:34:20,076 --> 02:34:24,616
+first let me verify that this is actually the-
+
+1262
+02:34:24,640 --> 02:34:25,040
+Thanks.
+
+1263
+02:34:36,340 --> 02:34:38,080
+Yeah. For sure. here.
+
+1264
+02:34:49,684 --> 02:34:52,744
+Silly. Okay.
+
+1265
+02:34:53,684 --> 02:34:58,344
+Let's tuck that up. Okay.
+
+1266
+02:35:00,044 --> 02:35:02,044
+Let's make sure I'm on the right branch.
+
+1267
+02:35:26,258 --> 02:35:27,738
+Interesting.
+
+1268
+02:35:48,172 --> 02:35:50,412
+I just pushed that tool.
+
+1269
+02:35:53,912 --> 02:35:58,552
+Alright. Put that on the wrong branch.
+
+1270
+02:35:58,553 --> 02:35:58,652
+Thank you very
+
+1271
+02:36:20,016 --> 02:36:22,616
+Let's make sure this is the change I thought it was.
+
+1272
+02:36:22,617 --> 02:36:24,936
+And that's it.
+
+1273
+02:36:36,240 --> 02:36:39,720
+Yeah. Okay. So we need a cherry pick.
+
+1274
+02:36:39,721 --> 02:36:39,940
+Okay.
+
+1275
+02:36:51,344 --> 02:36:55,364
+Actually, I need to just murder it this way.
+
+1276
+02:37:38,642 --> 02:37:39,242
+Okay.
+
+1277
+02:40:34,700 --> 02:40:39,140
+One further complete test in code. For the phase.
+
+1278
+02:44:18,866 --> 02:44:21,786
+Okay, well I can't really mess with this, I'm not a time.
+
+1279
+02:44:23,906 --> 02:44:25,566
+Let's see how we're doing. and
+
+1280
+02:44:30,770 --> 02:44:31,850
+on our command lane.
+
+1281
+02:44:46,700 --> 02:44:48,340
+We got 15 minutes. Yes.
+
+1282
+02:44:56,204 --> 02:45:00,984
+Uhh, okay. So.
+
+1283
+02:45:04,184 --> 02:45:08,864
+I think. Let's see what branch am
+
+1284
+02:45:08,865 --> 02:45:09,204
+I in.
+
+1285
+02:46:16,656 --> 02:46:18,716
+Actually, this is not the right way to go. .
+
+1286
+02:47:46,162 --> 02:47:48,162
+What is the name of the repository? All right.
+
+1287
+02:48:31,180 --> 02:48:32,580
+So, what's he doing?
+
+1288
+02:52:18,416 --> 02:52:21,736
+Alright. Let's try.
+
+1289
+02:52:35,860 --> 02:52:36,480
+Mmm, heh, heh. Mm-hmm.
+
+1290
+02:53:32,548 --> 02:53:33,088
+Umm, hm, hm,
+
+1291
+02:53:39,008 --> 02:53:39,248
+hm, hm. You
+
+1292
+02:56:02,292 --> 02:56:02,772
+Okay. Okay.
+
+1293
+02:57:25,648 --> 02:57:27,888
+Okay, we're kind of on the final stretch.
+
+1294
+02:57:27,889 --> 02:57:30,488
+We- we demonstrated that we had playable AI,
+
+1295
+02:57:30,888 --> 02:57:33,488
+so. Like, uh, tic-tac-toe.
+
+1296
+02:57:33,908 --> 02:57:37,168
+We, like, met the objective. Umm,
+
+1297
+02:57:37,848 --> 02:57:40,188
+but we did it and, kind of.
+
+1298
+02:57:40,352 --> 02:57:43,432
+At the last minute. And umm,
+
+1299
+02:57:43,752 --> 02:57:45,952
+I'm very uncomfortable with that.
+
+1300
+02:57:46,832 --> 02:57:50,112
+Umm, so let's do a little retrospective.
+
+1301
+02:57:50,712 --> 02:57:55,872
+What went wrong? Well, I think fundamentally what went wrong is that I'm using,
+
+1302
+02:57:55,873 --> 02:58:00,212
+you know, these big design documents that I use for,
+
+1303
+02:58:00,232 --> 02:58:04,696
+kind of, really complex projects that- are,
+
+1304
+02:58:04,697 --> 02:58:07,416
+kind of, two or three-day efforts.
+
+1305
+02:58:08,096 --> 02:58:12,596
+Umm, and usually what happens is that the AI can,
+
+1306
+02:58:12,936 --> 02:58:15,676
+you know, generate, you know, a milestone at a time,
+
+1307
+02:58:15,677 --> 02:58:18,536
+test it and so on. There's review cycles in between.
+
+1308
+02:58:19,296 --> 02:58:24,216
+I get involved, you know, oftentimes in- and so- and I- I
+
+1309
+02:58:24,217 --> 02:58:26,816
+review those docs a lot more, umm,
+
+1310
+02:58:27,316 --> 02:58:30,900
+carefully to actually- Actually, make sure I'm kind of happy with the design.
+
+1311
+02:58:32,000 --> 02:58:34,240
+And I try to compress that,
+
+1312
+02:58:34,960 --> 02:58:37,020
+you know, into this three-hour chunks.
+
+1313
+02:58:37,480 --> 02:58:42,040
+So, the design documents were too long for the
+
+1314
+02:58:42,041 --> 02:58:46,760
+kind of quick turns we needed to make in order to do
+
+1315
+02:58:46,761 --> 02:58:51,620
+six iterations or, you know, four or five iterations in
+
+1316
+02:58:51,621 --> 02:58:55,304
+three hours. And, um, so if I had to do it over again,
+
+1317
+02:58:55,804 --> 02:58:58,864
+the way that I would do it is by using a much shorter kind
+
+1318
+02:58:58,865 --> 02:59:00,984
+of design approach, um,
+
+1319
+02:59:01,504 --> 02:59:05,264
+with, with smaller inputs, and that way we would get tighter cycles.
+
+1320
+02:59:05,764 --> 02:59:07,924
+And, uh, we might, um,
+
+1321
+02:59:08,624 --> 02:59:11,704
+we would then get, you know, additional iterations worth of work.
+
+1322
+02:59:12,224 --> 02:59:14,324
+Um, you know,
+
+1323
+02:59:14,484 --> 02:59:16,544
+what went well, well, I did- kids.
+
+1324
+02:59:16,608 --> 02:59:20,588
+See that the agent that was working on the CLI was never gonna finish
+
+1325
+02:59:20,589 --> 02:59:22,988
+in time. Uh, I mean,
+
+1326
+02:59:23,108 --> 02:59:26,968
+it's now- it's just now working on implementing that,
+
+1327
+02:59:27,488 --> 02:59:29,708
+you know, Section 421.
+
+1328
+02:59:30,568 --> 02:59:33,708
+It'll be a while before it gets through all of those sections to get,
+
+1329
+02:59:33,709 --> 02:59:37,948
+you know, three different milestones of the command line tool.
+
+1330
+02:59:38,508 --> 02:59:40,892
+Um, and I pivoted to- who,
+
+1331
+02:59:41,072 --> 02:59:45,992
+you know, just using Oakliffe's generator and a quick prompt to
+
+1332
+02:59:45,993 --> 02:59:49,412
+knock out something really fast so that,
+
+1333
+02:59:49,413 --> 02:59:54,132
+you know, I wouldn't be caught with nothing at the end of the-
+
+1334
+02:59:54,133 --> 02:59:56,832
+of the cycle. So, um,
+
+1335
+02:59:57,552 --> 03:00:00,052
+thanks very much for, um,
+
+1336
+03:00:00,392 --> 03:00:03,652
+giving me an opportunity to, uh, to interview with this.
+
+1337
+03:00:03,792 --> 03:00:06,536
+I look forward to our conversation. And,
+
+1338
+03:00:06,537 --> 03:00:08,836
+um, I'll get this kind of cleaned up and pushed,
+
+1339
+03:00:09,516 --> 03:00:12,016
+but, um, I won't. Uh,
+
+1340
+03:00:12,156 --> 03:00:14,216
+anything else that gets pushed, uh,
+
+1341
+03:00:14,976 --> 03:00:18,596
+I'll definitely make sure it gets marked with late or something like that.
+
+1342
+03:00:18,776 --> 03:00:21,576
+And so it's, like, really clear kind of where we end it.
+
+1343
+03:00:22,036 --> 03:00:22,516
+Thanks again.
+
+1344
+03:00:32,270 --> 03:00:35,170
+And where is our,
+
+1345
+03:00:35,171 --> 03:00:37,410
+err,
+
+1346
+03:00:37,550 --> 03:00:38,350
+um. You

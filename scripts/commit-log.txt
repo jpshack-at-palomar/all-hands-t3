@@ -1,0 +1,438 @@
+* commit 3cf3969de3c8bc6e4a33b74a1d761c300a065191 (HEAD -> main)
+| Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| Date:   22:19
+| 
+|     docs: added previously uncommitted docs
+| 
+| doc/pr-01-review-01.md
+| doc/project-summary.md
+| doc/t3-cli-notes.txt
+| doc/t3-fastify.md
+| doc/t3-react-minimal.md
+| doc/t3-react.md
+| doc/transcript.srt
+| packages/cli2/oclif.manifest.json
+|   
+| * commit ef62361ab5ac9e4e0d7394fc892d19aa0c45a5f6 (refs/stash)
+|/| Merge: ec96a8e 249c301
+| | Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| | Date:   22:11
+| | 
+| |     WIP on main: ec96a8e chore: removed debugging from github workflow
+| | 
+| * commit 249c3017688a5117b8e0c0f8f4997f997ec9dbf0
+|/  Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+|   Date:   22:11
+|   
+|       index on main: ec96a8e chore: removed debugging from github workflow
+|   
+|   doc/pr-01-review-01.md
+|   doc/project-summary.md
+|   doc/t3-cli-notes.txt
+|   doc/t3-fastify.md
+|   doc/t3-react-minimal.md
+|   doc/t3-react.md
+|   doc/transcript.srt
+|   packages/cli2/oclif.manifest.json
+| 
+* commit ec96a8e67c912d0b379a4a2a4bfb68f27db19250 (origin/main, origin/HEAD)
+| Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| Date:   18:45
+| 
+|     chore: removed debugging from github workflow
+| 
+| .github/workflows/ci.yml
+| doc/approach.md
+| eslint.config.js
+|   
+| * commit e9ba7cf7339b2560571e368cd37e5408f0ee75db (origin/jps/t3-command)
+| | Author: Background Agent <agent@example.com>
+| | Date:   01:04
+| | 
+| |     4.3.1: Game Controller implementation
+| | 
+| | packages/cli/src/utils/game-controller.ts
+| | packages/cli/test/utils/game-controller.test.ts
+| | packages/cli/vitest.config.ts
+| | 
+| * commit 53358b82e252777880e3f3444e9017258619fc0c
+| | Author: Background Agent <agent@example.com>
+| | Date:   00:56
+| | 
+| |     4.2.2: Test utilities integration
+| | 
+| | packages/cli/.eslintrc.json
+| | packages/cli/test/utils/oclif-test-utils.ts
+| | packages/cli/test/utils/test-utils.test.ts
+| | packages/cli/test/utils/test-utils.ts
+| | packages/cli/tsconfig.json
+| | 
+| * commit b9e7ab37de5b7565ced9cd9d9ea8004bf20de156
+|/  Author: Background Agent <agent@example.com>
+|   Date:   00:51
+|   
+|       4.2.1: CLI type definitions
+|   
+|   doc/approach.md
+|   packages/cli/bin/run.js
+|   packages/cli/package.json
+|   packages/cli/src/index.ts
+|   packages/cli/src/types/cli.ts
+|   packages/cli/test/types/cli.test.ts
+|   packages/cli/tsconfig.json
+|   packages/cli/vitest.config.ts
+|   pnpm-lock.yaml
+|   
+| * commit 434bbe7147cec5b7131a3c0a95da512709fd26ad (origin/jps/cli2, jps/cli2)
+|/  Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+|   Date:   18:29
+|   
+|       feat: cli2
+|   
+|   eslint.config.js
+|   package.json
+|   packages/cli2/.github/workflows/onPushToMain.yml
+|   packages/cli2/.github/workflows/onRelease.yml
+|   packages/cli2/.github/workflows/test.yml
+|   packages/cli2/.gitignore
+|   packages/cli2/.mocharc.json
+|   packages/cli2/.prettierrc.json
+|   packages/cli2/README.md
+|   packages/cli2/bin/dev.cmd
+|   packages/cli2/bin/dev.js
+|   packages/cli2/bin/run.cmd
+|   packages/cli2/bin/run.js
+|   packages/cli2/eslint.config.mjs
+|   packages/cli2/package.json
+|   packages/cli2/src/commands/game/index.ts
+|   packages/cli2/src/index.ts
+|   packages/cli2/test/commands/game/index.test.ts
+|   packages/cli2/test/tsconfig.json
+|   packages/cli2/tsconfig.json
+|   packages/lib/package.json
+|   pnpm-lock.yaml
+|   
+*   commit 012e87558b91a0c9a58f5ad8dc2da05165fd542e
+|\  Merge: 2650b2e 8bb1455
+| | Author: John-Mason Shackelford <160164118+jpshack-at-palomar@users.noreply.github.com>
+| | Date:   17:25
+| | 
+| |     Merge pull request #3 from jpshack-at-palomar/jps/t3-lib-component-m1
+| |     
+| |     docs: milestone checklists in better order for cli
+| | 
+| * commit 8bb1455f35b52a39746b16c79848fec41fc59f0e (origin/jps/t3-lib-component-m1, jps/t3-lib-component-m1)
+| | Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| | Date:   17:21
+| | 
+| |     docs: milestone checklists in better order for cli
+| | 
+| | doc/t3-cli.md
+| | 
+* | commit 2650b2e5492577c4e554c90df6a885f23ddab079
+|\| Merge: 4a181cf 4ea04ae
+| | Author: John-Mason Shackelford <160164118+jpshack-at-palomar@users.noreply.github.com>
+| | Date:   17:11
+| | 
+| |     Merge pull request #1 from jpshack-at-palomar/jps/t3-lib-component-m1
+| |     
+| |     t3/lib M1
+| | 
+| * commit 4ea04ae9cd9421d3b5570c750bbad5e08f499e2a
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   21:06
+| | 
+| |     feat: implement comprehensive performance and load tests
+| |     
+| |     - Add 16 performance and load tests covering all components
+| |     - Test core component load handling (GameBoard, GameState, MoveAnalyzer, CoordinateSystem, ActionSpaceAnalyzer)
+| |     - Test AI player consistency under load (Random and Strategic players)
+| |     - Test game engine load handling and manual move processing
+| |     - Add concurrent games testing with multiple simultaneous engines
+| |     - Test scalability with increasing board complexity and high-frequency queries
+| |     - Add stress testing with complete game simulations and strategic AI accuracy
+| |     - Test real-world usage patterns and responsive AI move generation
+| |     - All 299 tests passing with comprehensive coverage
+| | 
+| | packages/lib/test/integration/performance.test.ts
+| | 
+| * commit 253f0f54e5374ed9e5feca5b41cbadbe5adcc789
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   21:01
+| | 
+| |     feat: implement comprehensive full game scenario integration tests
+| |     
+| |     - Add 18 full game scenario tests covering all game conditions
+| |     - Test horizontal, vertical, and diagonal win detection
+| |     - Test draw scenarios with manual and AI player setups
+| |     - Test edge cases including quick wins and post-game move prevention
+| |     - Test complex game flows including blocking and fork scenarios
+| |     - Add human player integration and manual move testing
+| |     - Test game reset and state management functionality
+| |     - Add performance tests with rapid game simulations (50 games)
+| |     - Test consistency across multiple runs and strategic AI behavior
+| |     - All 283 tests passing
+| | 
+| | packages/lib/test/integration/full-game-scenarios.test.ts
+| | 
+| * commit 011afa9d4e1271ba5e5ba7c32147a979da98efa3
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:58
+| | 
+| |     feat: implement comprehensive AI vs AI integration tests
+| |     
+| |     - Add AI vs AI game integration tests with 10 test cases
+| |     - Test Random AI vs Random AI with game state validation
+| |     - Test Strategic AI vs Strategic AI with strategic move verification
+| |     - Test mixed AI matchups (Strategic vs Random)
+| |     - Add multiple game statistics collection and analysis
+| |     - Add error handling tests for AI games
+| |     - Verify game completion detection and final state validation
+| |     - All 265 tests passing
+| | 
+| | packages/lib/test/integration/ai-vs-ai.test.ts
+| | 
+| * commit 8ca5adc04b7e4502e5ab467c7d39ad25ad1ddb13
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:55
+| | 
+| |     feat: implement main library export with comprehensive validation tests
+| |     
+| |     - Export all core game classes (GameBoard, GameState, GameEngine, MoveAnalyzer, ActionSpaceAnalyzer)
+| |     - Export all player classes (Player, HumanPlayer, RandomAIPlayer, StrategicAIPlayer)
+| |     - Export all type definitions (PlayerType, CellValue, GameStatus, Position, GridPosition)
+| |     - Export utility classes (CoordinateSystem)
+| |     - Add comprehensive export validation tests with 16 test cases
+| |     - Verify TypeScript compilation passes
+| |     - All 255 tests passing
+| | 
+| | packages/lib/src/index.ts
+| | packages/lib/test/index.test.ts
+| | 
+| * commit bc581448a12a3652be38cd5e3c84a44f08988eae
+| | Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| | Date:   16:32
+| | 
+| |     chore: fixed type errors
+| | 
+| | packages/lib/src/game/game-engine.ts
+| | 
+| * commit 965dbadeb184eb1d58f482ec559068c15201a186
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:23
+| | 
+| |     feat: implement coordinate system utilities and fix type imports
+| |     
+| |     - Add CoordinateSystem class with static utility methods
+| |     - Implement positionToGrid and gridToPosition conversions
+| |     - Add grid string parsing (parseGridString) with case-insensitive support
+| |     - Add validation methods (isValidGridPosition)
+| |     - Add formatting utilities (formatPosition)
+| |     - Add getAllGridPositions for complete coordinate enumeration
+| |     - Implement comprehensive test coverage with edge cases and round-trip testing
+| |     - Fix all TypeScript type import issues across the codebase
+| |     - Convert all type imports to use 'import type' syntax for verbatimModuleSyntax compliance
+| |     - Fix type errors in test files
+| |     - All tests passing (245/245)
+| |     
+| |     Completed sections:
+| |     - 4.2.8 Coordinate System Utilities ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/game/game-board.ts
+| | packages/lib/src/game/game-engine.ts
+| | packages/lib/src/game/move-analyzer.ts
+| | packages/lib/src/players/human-player.ts
+| | packages/lib/src/players/player.ts
+| | packages/lib/src/players/random-ai-player.ts
+| | packages/lib/src/players/strategic-ai-player.ts
+| | packages/lib/src/utils/coordinate-system.ts
+| | packages/lib/test/players/random-ai-player.test.ts
+| | packages/lib/test/utils/coordinate-system.test.ts
+| | 
+| * commit 98c59e4aa731e4eefaf79b3ef6a46b3ad637c0ed
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:16
+| | 
+| |     feat: implement action space analysis with strategic filtering
+| |     
+| |     - Add ActionSpaceAnalyzer class for comprehensive move analysis
+| |     - Implement getActionSpace method with strategic move prioritization
+| |     - Add strategic filtering methods (winning, blocking, forking, all)
+| |     - Implement game phase detection (opening, midgame, endgame)
+| |     - Add action space statistics for move categorization
+| |     - Integrate ActionSpaceAnalyzer into GameState class
+| |     - Add new GameState methods: getActionSpace, getActionSpaceWithGrid, getStrategicActionSpace, getActionSpaceStats
+| |     - Implement comprehensive test coverage with edge cases
+| |     - All tests passing (216/216)
+| |     
+| |     Completed sections:
+| |     - 4.2.7 Action Space Analysis ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/game/action-space.ts
+| | packages/lib/src/game/game-state.ts
+| | packages/lib/test/game/action-space.test.ts
+| | packages/lib/test/game/game-state.test.ts
+| | 
+| * commit 14b8b7e09f854e92ace2fca5e93cf9d983ebfa92
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:11
+| | 
+| |     feat: implement game engine with player coordination
+| |     
+| |     - Add GameEngine class for main game control and flow management
+| |     - Implement player coordination for automated and manual gameplay
+| |     - Add async move processing with player strategy integration
+| |     - Implement factory methods for common game setups (Human vs AI, AI vs AI)
+| |     - Add comprehensive error handling and game state management
+| |     - Implement complete test coverage with mock players and scenarios
+| |     - All tests passing (187/187)
+| |     
+| |     Completed sections:
+| |     - 4.2.6 Game Engine ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/game/game-engine.ts
+| | packages/lib/test/game/game-engine.test.ts
+| | 
+| * commit 30fe1717b34f421f8d21b4ecce752f0516301000
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   20:07
+| | 
+| |     feat: implement player system with AI players
+| |     
+| |     - Add abstract Player class with extensible interface
+| |     - Add HumanPlayer class with UI integration placeholder
+| |     - Add RandomAIPlayer with random move selection
+| |     - Add StrategicAIPlayer with move analysis and strategic decision making
+| |     - Implement comprehensive test coverage for all player types
+| |     - All tests passing (152/152)
+| |     
+| |     Completed sections:
+| |     - 4.2.5 Player System ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/players/human-player.ts
+| | packages/lib/src/players/player.ts
+| | packages/lib/src/players/random-ai-player.ts
+| | packages/lib/src/players/strategic-ai-player.ts
+| | packages/lib/test/players/human-player.test.ts
+| | packages/lib/test/players/player.test.ts
+| | packages/lib/test/players/random-ai-player.test.ts
+| | packages/lib/test/players/strategic-ai-player.test.ts
+| | 
+| * commit 93b17298c4af416a7a5e8aa82e95b606bddd0003
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   19:59
+| | 
+| |     feat: implement game state management and move analysis
+| |     
+| |     - Add MoveAnalyzer class with win detection and move analysis
+| |     - Add GameState class with complete game flow management
+| |     - Implement move validation, turn management, and game end detection
+| |     - Add comprehensive test coverage for both classes
+| |     - Fix deep copy issues in state management
+| |     - All tests passing (82/82)
+| |     
+| |     Completed sections:
+| |     - 4.2.3 Game State Management ✓
+| |     - 4.2.4 Move Analysis Engine ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/game/game-board.ts
+| | packages/lib/src/game/game-state.ts
+| | packages/lib/src/game/move-analyzer.ts
+| | packages/lib/src/types/game.ts
+| | packages/lib/test/game/game-board.test.ts
+| | packages/lib/test/game/game-state.test.ts
+| | packages/lib/test/game/move-analyzer.test.ts
+| | packages/lib/test/types/game.test.ts
+| | 
+| * commit ef0a90d5479a609c99a28574874a2a291b323413
+| | Author: Cursor Agent <cursoragent@cursor.com>
+| | Date:   19:53
+| | 
+| |     feat: implement type definitions and game board
+| |     
+| |     - Implement comprehensive TypeScript types for tic-tac-toe game
+| |     - Add GameBoard class with 3x3 grid management
+| |     - Include coordinate conversion between position and grid notation
+| |     - Add comprehensive test coverage for types and game board
+| |     - All tests passing (43/43)
+| |     
+| |     Completed sections:
+| |     - 4.2.1 Type Definitions ✓
+| |     - 4.2.2 Game Board Implementation ✓
+| | 
+| | doc/t3-lib-component.md
+| | packages/lib/src/game/game-board.ts
+| | packages/lib/src/types/game.ts
+| | packages/lib/test/game/game-board.test.ts
+| | packages/lib/test/types/game.test.ts
+| |   
+* |   commit 4a181cf63d6b5c66d5fb033322f66e77d8895457
+|\ \  Merge: 962c958 b08d738
+| |/  Author: John-Mason Shackelford <160164118+jpshack-at-palomar@users.noreply.github.com>
+|/|   Date:   16:20
+| |   
+| |       Merge pull request #2 from jpshack-at-palomar/cursor/integrate-checklists-with-milestone-overviews-7253
+| |       
+| |       Integrate checklists with milestone overviews
+| | 
+| * commit b08d738c5e3fbac5b0fe635dc10da9e365373964
+|/  Author: Cursor Agent <cursoragent@cursor.com>
+|   Date:   20:18
+|   
+|       Refactor approach doc with improved roadmap and quality metrics
+|       
+|       Co-authored-by: jpshack <jpshack@palomar.digital>
+|   
+|   doc/approach.md
+| 
+* commit 962c9589bc0f41513e43ea2fca419c19d428e8a2
+| Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| Date:   15:45
+| 
+|     docs: added design docs and cursor agent config
+| 
+| .cursor/environment.json
+| doc/oh-tech-assessment.md
+| doc/t3-contracts.md
+| doc/t3-lib-component.md
+| 
+* commit 7168db6818b41174477847ace6fab6244dbff0af
+| Author: John-Mason P. Shackelford <jpshack@palomar.digital>
+| Date:   15:28
+| 
+|     docs: updated the readme and doing the first build
+| 
+| README.md
+| doc/approach.md
+| doc/t3-lib-component.md
+| 
+* commit b8b8b12e6b76e10ea05de16a7be310fcf38a6fc8
+  Author: John-Mason Shackelford <160164118+jpshack-at-palomar@users.noreply.github.com>
+  Date:   15:19
+  
+      Initial commit
+  
+  .github/workflows/ci.yml
+  .gitignore
+  .husky/commit-msg
+  .husky/pre-commit
+  .prettierignore
+  .prettierrc
+  README.md
+  eslint.config.js
+  package.json
+  packages/lib/package.json
+  packages/lib/src/index.ts
+  packages/lib/test/index.test.ts
+  packages/lib/tsconfig.json
+  packages/lib/tsconfig.test.json
+  packages/lib/vitest.config.ci.ts
+  pnpm-lock.yaml
+  pnpm-workspace.yaml
+  tsconfig.json
+  vitest.config.ts

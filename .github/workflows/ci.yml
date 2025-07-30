@@ -61,14 +61,6 @@ jobs:
         run: pnpm test:ci
         continue-on-error: true
 
-      - name: Debug - List coverage files
-        if: always()
-        run: |
-          echo "=== Coverage files ==="
-          find packages -name "*.xml" -o -name "coverage" -type d
-          echo "=== JUnit XML content ==="
-          find packages -name "vitest-junit.xml" -exec cat {} \;
-
       - name: Upload coverage reports
         if: always()
         uses: actions/upload-artifact@v4
