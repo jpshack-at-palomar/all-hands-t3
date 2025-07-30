@@ -1,0 +1,27 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "extends": ["../../eslint.config.js"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["test/**/*"],
+      "env": {
+        "node": true,
+        "vitest": true
+      },
+      "rules": {
+        "no-console": "off",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    }
+  ],
+  "rules": {
+    "no-console": "off"
+  }
+}
