@@ -1,4 +1,9 @@
+/* eslint-env node */
 import { defineConfig } from 'vitest/config';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   test: {
@@ -20,7 +25,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@pnpm-template/lib': '../../lib/src',
+      '@pnpm-template/lib': path.resolve(__dirname, '../lib/src'),
     },
+  },
+  esbuild: {
+    target: 'node18',
   },
 });
