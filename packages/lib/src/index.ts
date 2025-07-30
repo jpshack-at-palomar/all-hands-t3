@@ -22,6 +22,11 @@ export { Player } from './players/player.js';
 export { HumanPlayer } from './players/human-player.js';
 export { RandomAIPlayer } from './players/random-ai-player.js';
 export { StrategicAIPlayer } from './players/strategic-ai-player.js';
+export { MinimaxAIPlayer } from './players/minimax-ai-player.js';
+export {
+  AIPlayerFactory,
+  type AIPlayerInfo,
+} from './players/ai-player-factory.js';
 
 // Utility Classes
 export { CoordinateSystem } from './utils/coordinate-system.js';

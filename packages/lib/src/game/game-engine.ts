@@ -7,8 +7,7 @@ import type {
 import type { Player } from '../players/player.js';
 import { GameState } from './game-state.js';
 import { HumanPlayer } from '../players/human-player.js';
-import { RandomAIPlayer } from '../players/random-ai-player.js';
-import { StrategicAIPlayer } from '../players/strategic-ai-player.js';
+import { AIPlayerFactory } from '../players/ai-player-factory.js';
 
 export class GameEngine {
   private gameState: GameState;
@@ -119,7 +118,7 @@ export class GameEngine {
   static createHumanVsRandomAI(): GameEngine {
     return new GameEngine(
       new HumanPlayer('X', 'Human'),
-      new RandomAIPlayer('O', 'Random AI')
+      AIPlayerFactory.createAIPlayer('random', 'O', 'Random AI')
     );
   }
 
@@ -129,7 +128,7 @@ export class GameEngine {
   static createHumanVsStrategicAI(): GameEngine {
     return new GameEngine(
       new HumanPlayer('X', 'Human'),
-      new StrategicAIPlayer('O', 'Strategic AI')
+      AIPlayerFactory.createAIPlayer('strategic', 'O', 'Strategic AI')
     );
   }
 
@@ -138,8 +137,28 @@ export class GameEngine {
    */
   static createRandomAIVsStrategicAI(): GameEngine {
     return new GameEngine(
-      new RandomAIPlayer('X', 'Random AI'),
-      new StrategicAIPlayer('O', 'Strategic AI')
+      AIPlayerFactory.createAIPlayer('random', 'X', 'Random AI'),
+      AIPlayerFactory.createAIPlayer('strategic', 'O', 'Strategic AI')
+    );
+  }
+
+  /**
+   * Create a game with human vs specified AI
+   */
+  static createHumanVsAI(aiType: string): GameEngine {
+    return new GameEngine(
+      new HumanPlayer('X', 'Human'),
+      AIPlayerFactory.createAIPlayer(aiType, 'O')
+    );
+  }
+
+  /**
+   * Create a game with specified AI vs specified AI
+   */
+  static createAIVsAI(aiType1: string, aiType2: string): GameEngine {
+    return new GameEngine(
+      AIPlayerFactory.createAIPlayer(aiType1, 'X'),
+      AIPlayerFactory.createAIPlayer(aiType2, 'O')
     );
   }
 }
