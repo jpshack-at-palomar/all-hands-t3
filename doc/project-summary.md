@@ -303,9 +303,9 @@ AI agents require clear communication protocols, realistic expectations about co
 
 The project ultimately succeeded in delivering a working tic-tac-toe game, but revealed important lessons about adapting development methodologies to different time constraints.
 
-## 4. The Code
+### 4. The Code
 
-### 4.1 Deliverable
+#### 4.1 Deliverable
 
 The final deliverable is in the `jps/cli2` branch.
 
@@ -315,16 +315,29 @@ Instructions for running the code:
 git clone https://github.com/jpshack-at-palomar/all-hands-t3.git
 git checkout jps/cli2
 pnpm install
-pnpm test
+pnpm # run tests
 cd packages/cli2
-pnpm build
-# Play against AI (explicit)
-./bin/run.js game --mode human-vs-ai
+# ensure the CLI is built
+./bin/run.js # add arguments to play a game
 ```
 
-### 4.2 Other Branches
+Known to work:
 
-### 4.3 Project Structure
+- ai vs. human
+
+Known issues:
+
+To package the CLI for distribution, run:
+
+```bash
+# build
+# package
+# install
+```
+
+#### 4.2 Other Branches
+
+#### 4.3 Project Structure
 
 ```plaintext
 all-hands-t3/
@@ -433,88 +446,9 @@ all-hands-t3/
   - TypeScript, Vitest, ESLint, and GitHub Actions CI/CD
   - Shared tooling and development workflow
 
-### 4.4 Test Code Coverage Report
+### 4.4 Development Workflow (pnpm)
 
-```plaintext
- RUN  v2.1.9 /Users/jpshack-new/code/all-hands/all-hands-t3/packages/lib
-      Coverage enabled with v8
-
- ✓ test/index.test.ts (16)
- ✓ test/game/action-space.test.ts (22)
- ✓ test/game/game-board.test.ts (25)
- ✓ test/game/game-engine.test.ts (35)
- ✓ test/game/game-state.test.ts (32)
- ✓ test/game/move-analyzer.test.ts (14)
- ✓ test/integration/ai-vs-ai.test.ts (10)
- ✓ test/integration/full-game-scenarios.test.ts (18)
- ✓ test/integration/performance.test.ts (16)
- ✓ test/players/human-player.test.ts (15)
- ✓ test/players/player.test.ts (9)
- ✓ test/players/random-ai-player.test.ts (19)
- ✓ test/players/strategic-ai-player.test.ts (27)
- ✓ test/types/game.test.ts (12)
- ✓ test/utils/coordinate-system.test.ts (29)
-
- Test Files  15 passed (15)
-      Tests  299 passed (299)
-   Start at  09:39:57
-   Duration  1.59s (transform 650ms, setup 0ms, collect 1.53s, tests 603ms, environment 4ms, prepare 2.75s)
-
- % Coverage report from v8
--------------------------|---------|----------|---------|---------|-------------
-------------------
-File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
--------------------------|---------|----------|---------|---------|-------------
-------------------
-All files                |   97.56 |    95.14 |     100 |   97.56 |
-
- src                     |     100 |      100 |     100 |     100 |
-
-  index.ts               |     100 |      100 |     100 |     100 |
-
- src/game                |   97.77 |    96.27 |     100 |   97.77 |
-
-  action-space.ts        |   93.18 |       92 |     100 |   93.18 | 94-96,119-120,145-146,153-154
-  game-board.ts          |     100 |      100 |     100 |     100 |
-
-  game-engine.ts         |     100 |      100 |     100 |     100 |
-
-  game-state.ts          |   98.31 |    94.44 |     100 |   98.31 | 131-132
-
-  move-analyzer.ts       |     100 |      100 |     100 |     100 |
-
- src/players             |   94.93 |     87.5 |     100 |   94.93 |
-
-  human-player.ts        |     100 |      100 |     100 |     100 |
-
-  player.ts              |     100 |      100 |     100 |     100 |
-
-  random-ai-player.ts    |     100 |      100 |     100 |     100 |
-
-  strategic-ai-player.ts |      90 |       80 |     100 |      90 | 46-47,51-52
-
- src/types               |       0 |        0 |       0 |       0 |
-
-  game.ts                |       0 |        0 |       0 |       0 |
-
- src/utils               |     100 |      100 |     100 |     100 |
-
-  coordinate-system.ts   |     100 |      100 |     100 |     100 |
-
--------------------------|---------|----------|---------|---------|-------------
-------------------
-```
-
-**Coverage Summary:**
-
-- **Overall Coverage**: 97.56%
-- **Test Files**: 15 passed
-- **Tests**: 299 passed
-- **Duration**: 1.59s
-
-### 4.5 Development Workflow (pnpm)
-
-### 4.5.1 Top Level Commands
+### 4.4.1 Top Level Commands
 
 ```bash
 # 0. Check the status of the project by running the full test suite.
@@ -553,11 +487,11 @@ git push author/branch
 - `pnpm test` - Complete workflow (build + typecheck + lint + format + test)
 - `pnpm clean` - Remove build artifacts
 
-### 4.5.2 `packages/lib`
+### 4.4.2 `packages/lib`
 
 See `packages/lib/README.md` for details.
 
-### 4.5.3 `packages/cli2`
+### 4.4.3 `packages/cli2`
 
 See `packages/cli2/README.md` for details.
 
@@ -567,6 +501,17 @@ The following were not completed in the three hours alloted but were finished la
 
 ### Epilogue
 
-|                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Princess Bride](doc/media/princess-bride.jpeg) | **Fezzik**: I just figured why you give me so much trouble. (groans)<br><br>**Dread Pirate Roberts**: Why is that, do you think?<br><br>**Fezzik**: Well, I haven't fought just one person... for so long. Been specializing in groups, battling gangs for local charities. That kind of thing.<br><br>**Dread Pirate Roberts**: Why should that make such a... difference?<br><br>**Fezzik**: Well, you see, you use different moves when you're fighting half a dozen people than when you only have to be worried about one.<br><br>**Dread Pirate Roberts**: I do not envy you the headache you will have when you awake. |
+Fezzik: I just figured why you give me so much trouble. (groans)
+
+Dread Pirate Roberts: Why is that, do you think?
+
+Fezzik: Well, I haven't fought just one person... for so long. Been specializing
+in groups, battling gangs for local charities. That kind of thing.
+
+Dread Pirate Roberts: Why should that make such a... difference?
+
+Fezzik: Well, you see, you use different moves when you're fighting half a dozen
+people than when you only have to be worried about one.
+
+Dread Pirate Roberts: I do not envy you the headache you will have when you
+awake.

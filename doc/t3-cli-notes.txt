@@ -1,0 +1,74 @@
+Okay, this is, these are notes for a design doc that we want for T.
+Three or tic-tac-toe, um, CLI.
+And, uh, CLI is going to provide.
+A, um, command line client, really simple one.
+For, um,
+playing tic-tac-toe. Um, but it's not gonna have any.
+Like visual output.
+Uh, I mean will, but it's just going to be.
+Prompting you, um, for your move.
+And telling you what move it's gonna take.
+Um, and we're gonna refer to the tic-tac-toe grid.
+With lettered columns, numbered rows.
+Rows. And, um, we're going to use the existing model classes that are in the lib directory.
+Um, this CLI will be under.
+Um, the packages CLI
+um, gonna use Oak cliff.
+Um, we're gonna test it with the Oak cliff testing tools.
+And, um, I will
+append.
+The, um,
+the read me actually, I'll probably pin the whole source code for the, um, Oak Cliffe testing tools to make sure that we use those properly.
+Um, what else?
+Do we need to know about the CLI so.
+Um, the command is gonna be.
+Let's just make the command T3.
+T3. Um, and
+let's
+let's let's make a command called N.
+The topic will be called T3.
+T3 and the command will be called new and it's gonna command create a new game.
+And, and then
+um, the
+um, it'll prompt for.
+First it'll take a kind of a random.
+Coin flip to see who plays first, the AI or the.
+Human and
+um, the.
+Um,
+when it's the human turned into play.
+Um, it'll just prompt.
+Using Inquirer or something like that, uh, to.
+Prompt you for your move.
+Which you'll give like a one or B2 or something like that.
+And then, um,
+the, the AI will turn, will take its turn. And then what will be displayed is a list of.
+Um, each of the turns, um,
+you know, player one.
+And then what they turned player.
+Player two, what they moved and so on.
+Um, and then it'll announce the winner at the end of the game.
+Um,
+<affirmative> and that's all, that's all we'll do to start with. Um,
+let's let's, that'll be milestone one.
+Milestone two on
+we'll introduce the concept of a match.
+So there, we need to add the concept of match to the lib directory and a match.
+Is, um, the number of.
+Games and
+um, so you can have a five game match, for example.
+Or, you know, play two outta three for a three game match or, uh, three outta five for a five game match or so on. You.
+You specify the number of.
+Games in the match.
+And then, um,
+it'll go ahead and, and play a match with.
+Uh, you know, each turn each, each turn.
+There'll be, um, a coin flip.
+Um, for whoever gets to start the first game.
+The second match. Um,
+or the second game in the match will be started by.
+Whoever didn't get to play first. The first time.
+And it'll just alternate from there.
+Um,
+so, yeah, the checklist in the design document should be organized into those two milestones.
+Um, for the command line.

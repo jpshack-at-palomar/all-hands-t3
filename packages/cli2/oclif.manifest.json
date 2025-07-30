@@ -1,0 +1,98 @@
+{
+  "commands": {
+    "game": {
+      "aliases": [],
+      "args": {},
+      "description": "Play a game of Tic-Tac-Toe",
+      "examples": [
+        "$ t3 game --mode human-vs-human",
+        "$ t3 game --mode human-vs-ai",
+        "$ t3 game --mode ai-vs-ai"
+      ],
+      "flags": {
+        "mode": {
+          "char": "m",
+          "description": "Game mode",
+          "name": "mode",
+          "default": "human-vs-ai",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": ["human-vs-human", "human-vs-ai", "ai-vs-ai"],
+          "type": "option"
+        },
+        "help": {
+          "char": "h",
+          "description": "Show CLI help.",
+          "name": "help",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "game",
+      "pluginAlias": "cli2",
+      "pluginName": "cli2",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": ["dist", "commands", "game", "index.js"]
+    },
+    "hello": {
+      "aliases": [],
+      "args": {
+        "person": {
+          "description": "Person to say hello to",
+          "name": "person",
+          "required": true
+        }
+      },
+      "description": "Say hello",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> friend --from oclif\nhello friend from oclif! (./src/commands/hello/index.ts)\n"
+      ],
+      "flags": {
+        "from": {
+          "char": "f",
+          "description": "Who is saying hello",
+          "name": "from",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "hello",
+      "pluginAlias": "cli2",
+      "pluginName": "cli2",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": ["dist", "commands", "hello", "index.js"]
+    },
+    "hello:world": {
+      "aliases": [],
+      "args": {},
+      "description": "Say hello world",
+      "examples": [
+        "<%= config.bin %> <%= command.id %>\nhello world! (./src/commands/hello/world.ts)\n"
+      ],
+      "flags": {},
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "hello:world",
+      "pluginAlias": "cli2",
+      "pluginName": "cli2",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": ["dist", "commands", "hello", "world.js"]
+    }
+  },
+  "version": "0.0.0"
+}
