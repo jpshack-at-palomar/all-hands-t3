@@ -1,11 +1,29 @@
 import {Command, Flags} from '@oclif/core'
-import {GameEngine} from '@pnpm-template/lib'
+import {AIPlayerFactory, GameEngine} from '@pnpm-template/lib'
 import * as readline from 'node:readline'
 
 export default class Game extends Command {
   static description = 'Play a game of Tic-Tac-Toe'
-  static examples = ['$ t3 game --mode human-vs-human', '$ t3 game --mode human-vs-ai', '$ t3 game --mode ai-vs-ai']
+  static examples = [
+    '$ t3 game --mode human-vs-human',
+    '$ t3 game --mode human-vs-ai',
+    '$ t3 game --mode ai-vs-ai',
+    '$ t3 game --mode human-vs-ai --ai strategic',
+    '$ t3 game --mode ai-vs-ai --ai1 random --ai2 strategic',
+  ]
   static flags = {
+    ai: Flags.string({
+      dependsOn: ['mode'],
+      description: 'AI type for human-vs-ai mode (random, strategic)',
+    }),
+    ai1: Flags.string({
+      dependsOn: ['mode'],
+      description: 'First AI type for ai-vs-ai mode (random, strategic)',
+    }),
+    ai2: Flags.string({
+      dependsOn: ['mode'],
+      description: 'Second AI type for ai-vs-ai mode (random, strategic)',
+    }),
     help: Flags.help({char: 'h'}),
     mode: Flags.string({
       char: 'm',
@@ -21,16 +39,32 @@ export default class Game extends Command {
     this.log('🎮 Welcome to Tic-Tac-Toe!')
     this.log('')
 
+    // Validate AI types if provided
+    if (flags.ai && !AIPlayerFactory.hasAIPlayer(flags.ai)) {
+      this.error(`Invalid AI type: ${flags.ai}. Available types: ${AIPlayerFactory.getAvailableAIIds().join(', ')}`)
+    }
+
+    if (flags.ai1 && !AIPlayerFactory.hasAIPlayer(flags.ai1)) {
+      this.error(`Invalid AI1 type: ${flags.ai1}. Available types: ${AIPlayerFactory.getAvailableAIIds().join(', ')}`)
+    }
+
+    if (flags.ai2 && !AIPlayerFactory.hasAIPlayer(flags.ai2)) {
+      this.error(`Invalid AI2 type: ${flags.ai2}. Available types: ${AIPlayerFactory.getAvailableAIIds().join(', ')}`)
+    }
+
     let gameEngine: GameEngine
 
     switch (flags.mode) {
       case 'ai-vs-ai': {
-        gameEngine = GameEngine.createRandomAIVsStrategicAI()
+        gameEngine =
+          flags.ai1 && flags.ai2
+            ? GameEngine.createAIVsAI(flags.ai1, flags.ai2)
+            : GameEngine.createRandomAIVsStrategicAI()
         break
       }
 
       case 'human-vs-ai': {
-        gameEngine = GameEngine.createHumanVsRandomAI()
+        gameEngine = flags.ai ? GameEngine.createHumanVsAI(flags.ai) : GameEngine.createHumanVsRandomAI()
         break
       }
 
