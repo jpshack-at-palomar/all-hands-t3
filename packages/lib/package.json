@@ -2,6 +2,7 @@
   "name": "@pnpm-template/lib",
   "version": "1.0.0",
   "description": "A sample library package",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
