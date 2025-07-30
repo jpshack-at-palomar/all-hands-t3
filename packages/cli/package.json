@@ -1,0 +1,52 @@
+{
+  "name": "@t3/cli",
+  "version": "1.0.0",
+  "description": "Tic-tac-toe CLI application",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "oclif.manifest.json"
+  ],
+  "bin": {
+    "t3": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:ci": "vitest run",
+    "lint": "eslint src test --ext .ts",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf dist && npm run build && oclif manifest && oclif readme"
+  },
+  "oclif": {
+    "bin": "t3",
+    "dirname": "t3",
+    "commands": "./dist/commands",
+    "topicSeparator": " ",
+    "topics": {}
+  },
+  "dependencies": {
+    "@oclif/core": "^3.15.1",
+    "@oclif/plugin-help": "^6.0.8",
+    "@pnpm-template/lib": "workspace:*"
+  },
+  "devDependencies": {
+    "@oclif/test": "^3.2.2",
+    "@types/node": "^20.10.6",
+    "oclif": "^4.1.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "oclif",
+    "cli",
+    "tic-tac-toe",
+    "game"
+  ]
+}
